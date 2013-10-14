@@ -1,0 +1,158 @@
+<div ng-controller="myCtrl">
+       
+        <style>
+        .error {
+          color: red;
+        }  
+        .sucess {
+          color: green;
+        }  
+        </style>
+        <form role="form" name="chose_form" novalidate enctype="multipart/form-data" ng-upload action="/chose">
+            <fieldset>
+                <legend>Aujouter son objet</legend>
+                
+                <!-- Author -->
+                <div class="form-group">
+                    <label for="author">Votre nom</label>
+                    <div class="error"
+                         ng-show="chose_form.author.$dirty && chose_form.author.$invalid">
+                        <small class="error" ng-show="chose_form.author.$error.required">
+                            Vous devez entrer votre nom.
+                        </small>
+                        <small class="error" ng-show="chose_form.author.$error.minlength">
+                            Votre nom doit au moins contenir 3 caractères.
+                        </small>
+                        <small class="error" ng-show="chose_form.author.$error.maxlength">
+                            Votre nom doit au plus contenir 20 caractères.
+                        </small>
+                    </div>
+                    <input type="text" 
+                           placeholder="Nom"
+                           name="author"
+                           id="author"
+                           class="form-control"
+                           ng-model="chose.author"
+                           ng-minlength=3
+                           ng-maxlength=20 required />
+                </div>
+                <!-- /Author -->
+                
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Votre email</label>
+                    <div class="error"
+                         ng-show="chose_form.email.$dirty && chose_form.email.$invalid">
+                        <small class="error" ng-show="chose_form.email.$error.required">
+                            Vous devez entrer votre email.
+                        </small>
+                        <small class="error" ng-show="chose_form.email.$error.email">
+                            Vous devez entrer une adresse email correct.
+                        </small>
+                        <small class="error" ng-show="chose_form.email.$error.minlength">
+                            Votre email doit au moins contenir 3 caractères.
+                        </small>
+                        <small class="error" ng-show="chose_form.email.$error.maxlength">
+                            Votre email doit au plus contenir 40 caractères.
+                        </small>
+                    </div>
+                    <input type="email" 
+                           placeholder="Email"
+                           name="email"
+                           id="email"
+                           class="form-control"
+                           ng-model="chose.email"
+                           ng-minlength=3
+                           ng-maxlength=40 required />
+                </div>
+                <!-- /Email -->
+                
+                <!-- Title -->
+                <div class="form-group">
+                <label>Le nom de votre objet</label>
+                    <div class="error"
+                         ng-show="chose_form.title.$dirty && chose_form.title.$invalid">
+                        <small class="error" ng-show="chose_form.title.$error.required">
+                            Vous devez entrer le nom de votre objet.
+                        </small>
+                        <small class="error" ng-show="chose_form.title.$error.minlength">
+                            Le nom de votre objet doit au moins contenir 3 caractères.
+                        </small>
+                        <small class="error" ng-show="chose_form.title.$error.maxlength">
+                            Le nom de votre objet doit au plus contenir 30 caractères.
+                        </small>
+                    </div>
+                    <input type="text" 
+                           placeholder="Nom de votre objet"
+                           name="title"
+                           class="form-control"
+                           ng-model="chose.title"
+                           ng-minlength=3
+                           ng-maxlength=30 required />
+                    </div>
+                    <!-- /Title -->
+                    
+                    <!-- Content -->
+                <div class="form-group">
+                    <label>La description de votre objet</label>
+                    <div class="error"
+                         ng-show="chose_form.content.$dirty && chose_form.content.$invalid">
+                        <small class="error" ng-show="chose_form.content.$error.required">
+                            Vous devez entrer un descriptif de votre objet.
+                        </small>
+                        <small class="error" ng-show="chose_form.content.$error.minlength">
+                            Le descriptif de votre objet doit au moins contenir 10 caractères.
+                        </small>
+                        <small class="error" ng-show="chose_form.content.$error.maxlength">
+                            Le descriptif de votre objet doit au plus contenir 300 caractères.
+                        </small>
+                    </div>
+                    <textarea placeholder="Descriptif de votre objet"
+                              name="content"
+                              class="form-control"
+                              ng-model="chose.content"
+                              ng-minlength=10
+                              ng-maxlength=300 
+                              rows=6 required />
+                    </textarea>
+                </div>
+                <!-- /Content -->
+                
+                <!-- Image -->
+                <div class="form-group">
+                    <label>L'image de votre objet</label>
+                    <input type="file" 
+                           placeholder="L'image de votre objet"
+                           name="image"
+                           class="form-control" 
+                           ng-model="chose.image" 
+                           accept="image/jpeg, image/png" 
+                           valid-file 
+                           onchange="angular.element(this).scope().fileChanged()"/>
+                </div>
+                <small class="sucess" ng-show="isFileChanged()">
+                            OK
+                </small>
+                <small class="error" ng-show="!isFileChanged()">
+                Image requise
+                </small>
+                <!-- /Image -->
+                
+                <!-- CAPTCHA -->
+                <div class="form-group">
+                  <label>Combien font {{number[num01]}} plus {{number[num02]}} ?</label>
+                  <input type="text" name="captcha" ng-model="answer" value="" />
+                  <small class="error" ng-show="!ok() && chose_form.captcha.$dirty">
+                  Incorrect !
+                  </small>
+                  <small class="sucess" ng-show="ok()">
+                  Correct !
+                  </small>
+                </div>
+                <!-- /CAPTCHA -->
+                
+                <button type="submit" ng-disabled="valideForm()" upload-submit="results(content, completed)" class="button radius">Submit</button>
+            </fieldset>
+        </form>
+            
+        </div>

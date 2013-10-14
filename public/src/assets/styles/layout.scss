@@ -1,0 +1,364 @@
+// ===========================================================
+// Generate sections 
+// ===========================================================
+
+   /*$color: "#403859", "#91BFA8", "#E6C77D", "#BD4B56", "#365B63", "#C8BC9C", "#C58747", "#A53959";*/
+   $color: "#C9BD9D", "#BD4B57", "#403859", "#A63A59", "#92C0A9", "#C68847", "#DDBF74", "#365B63";
+	@for $i from 3 through 10 {
+		$j : $i - 2;
+		$bg-section: #{nth($color, $j)};
+		@if $i%2 == 0 {
+			section:nth-child(#{$i}) {
+				background-color: $bg-section;
+				background: linear-gradient(48deg, $bg-section 58%, rgba(0, 0, 0, 0) 58%), url('../images/bgsection-0#{$j}.jpg') right top;
+				
+				@media screen and (min-width: 720px) {
+					background-size: contain;
+				}
+			}
+			} @else {
+				section:nth-child(#{$i}) {
+					background-color: $bg-section;
+					background: linear-gradient(128deg, rgba(0, 0, 0, 0) 40%, $bg-section 40%), url('../images/bgsection-0#{$j}.jpg') left top;
+					
+					@media screen and (min-width: 720px) {
+					background-size: contain;
+					}
+				}
+			}
+	}
+
+// ===========================================================
+// Generate picto background for each sections
+// ===========================================================
+
+	@for $i from 1 through 8 {
+	.picto-bg-0#{$i} {
+		background-image: url('../images/picto-bg-0#{$i}.png');
+		background-repeat: no-repeat;
+		background-position: 90% 10%;
+		}
+	}
+
+// ===========================================================
+// illustration accueil
+// ===========================================================
+
+	section {
+		height: 130%;
+		@media screen and (min-width: 960px) {
+			height: 90%;
+		}
+		padding-left: 15px;
+		padding-right: 18px;
+		&:nth-child(2) {
+			padding-top: 150px;
+			height: 220%;
+			@media screen and (orientation: landscape) {
+				height: 350%;
+			}
+			@media screen and (min-width: 720px) {
+				padding-top: 250px;
+				height: 100%;
+			}
+
+
+			background-color: #365B63;
+			background-image: linear-gradient(128deg, #365B63 70%, rgba(64, 56, 89, 0) 70%), url('../images/bgsection-00.png');
+			background-position: 0% 10%;
+			color: $font-color !important;
+			
+		}
+		@media screen and (min-width: 760px) {
+			padding-right: 11em;
+			padding-left: 6em;
+			&:nth-child(even) {
+				text-align:left;
+			}
+			&:nth-child(odd) {
+				text-align:right;
+			}
+		}
+		
+	}
+
+	.centered {
+	display: table-cell;
+	vertical-align: middle;
+	}
+
+// ===========================================================
+// section
+// ===========================================================
+	
+	.contrib {
+		padding-top: 25%;
+	}
+
+	#contrib-00 {
+		padding: 0;
+		color: white;
+		background-image: linear-gradient(#91BFA8, #91BFA8) !important;
+		@media screen and (min-width: 768px) {
+			padding: 10% 20% 0% 20%;
+		}
+	}
+
+	#contrib-01 {
+		background-image: linear-gradient(#3F3758, #3F3758) !important;
+	}
+
+	.texte-sm-right {
+		background-repeat: no-repeat;
+		background-position: left;
+		@media screen and (min-width: 625px) and (max-width: 768px) {
+		max-width: 307px;
+		}
+		@media screen and (min-width: 425px) and (max-width: 625px) and (orientation: landscape) {
+			max-width: 247px;
+		}
+		@media screen and (min-width: 100px) and (max-width: 509px) and (orientation: landscape) {
+			max-width: 220px;
+		}
+	}
+
+	.texte-sm-left {
+		background-position: right;
+		background-repeat: no-repeat;
+		@media screen and (min-width: 625px) and (max-width: 768px) {
+		max-width: 307px;
+		}
+		@media screen and (min-width: 425px) and (max-width: 625px) and (orientation: landscape) {
+			max-width: 216px;
+		}
+		@media screen and (min-width: 100px) and (max-width: 509px) and (orientation: landscape) {
+			max-width: 186px;
+		}
+	}
+
+
+
+.modal-content {
+	background-color: #ECE8DA;
+}
+
+// ===========================================================
+// Play button 
+// ===========================================================
+
+@mixin play-button {
+	margin-top: 0%;
+	cursor: pointer;
+	width: 220px;
+}
+
+.play-right {
+	@include play-button;
+
+}
+
+.play-left {
+	@include play-button;
+	margin-left: 40px;
+}
+
+.btn-circle {
+	position: relative;
+	background-color: white;
+	border: 0;
+	border-radius: 90px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70px;
+	height: 70px;
+}
+
+/* test */
+.btn-circle-illus {
+	position: relative;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: black;
+	border: 0;
+	border-radius: 90px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70px;
+	height: 70px;
+}
+
+
+
+// set btn-circle centered
+.center {
+	text-align:center;
+	margin-left: 40%;
+	margin-right: 50%;
+	@media screen and (min-width: 480px) {
+		margin-left: 44%;
+	}
+	@media screen and (min-width: 768px) {
+		margin-left: 47%;
+	}
+}
+
+// ===========================================================
+// Box
+// ===========================================================
+
+.photo-redac {
+	width: 120px !important;
+	height: 120px !important;
+	margin-top: 23px !important;
+}
+
+.modal-propos {
+	color: black !important;
+}
+
+/*.modal-dialog {
+    right: 10% !important;
+    left: 10% !important;
+    width: 600px;
+}*/
+
+/*.pop-up {
+	display: none;
+	position: fixed;
+	z-index: 1001;
+	overflow-x: hidden;
+	margin: 10%;
+	width: 80%;
+	height: 80%;
+	background-color: #F0EDDE;
+	box-shadow: 5px 5px 25px rgba(0,0,0,0.3);
+	color: $bg-color;
+	padding: 5% 5% 5% 7%;
+	opacity: 1;
+	transform: opacity 1s;
+	&.pop-out {
+		opacity: 1;
+		transform: opacity 1s;
+	}
+}
+
+.fermer {
+	display: block;
+	cursor: pointer;
+	text-align: center;
+	font-size: 24px;
+	color: black;
+	position: fixed;
+	z-index: 3002;
+	margin-top: -5%;
+	margin-left: 66%;
+	width: 35px;
+	height: 35px;
+	@media screen and (min-width: 650px) {
+		margin-left: 68%;
+	}
+	@media screen and (min-width: 660px) {
+		margin-left: 69%;
+	}
+	@media screen and (min-width: 1024px) {
+		margin-left: 70%;
+	}
+
+}*/
+
+
+// ===========================================================
+// Video
+// ===========================================================
+
+.video-js {
+	/*padding-top: 36.25%;*/
+	padding-top: 40.25%;
+}
+.vjs-fullscreen {
+	padding-top: 0px;
+}
+
+#video-player {
+	z-index: 3000;
+}
+
+// ===========================================================
+// Some stuff..
+// ===========================================================
+
+// hide fixed div element in fullscreen video
+.fullscreen-ie {
+	display: none;
+}
+
+.texte-droite {
+	@media screen and (min-width: 768px) {
+		float: right!important;
+	}
+}
+
+
+
+.button {
+	cursor: pointer;
+	height: 35px;
+	width: 130px;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: black;
+	line-height: 35px;
+	padding-left: 5px;
+	margin-top: 15px;
+	a {
+		color: black;
+		text-decoration: none;
+	}
+}
+
+.img-circle {
+	width: 150px;
+	height: 150px;
+	background-color: $color-button;
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+.container-social {
+	clear: both;
+}
+
+
+// fix white space bug
+.row {
+	margin: 0;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+/* temporaire css pour dev */
+div[class*="col-"] {
+	border: 0px dashed blue;
+}
+/* /temporaire css pour dev */
+div[class*="row"] {
+	border: 0px dashed yellow;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	background-color: rgb(54, 91, 99);
+}
+
+body {
+	font-family: $font;
+	color: $font-color;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "SuperScrollorama",
+  "description": "The jQuery plugin for supercool scroll animation",
+  "homepage": "http://johnpolacek.github.io/superscrollorama/",
+  "author": {
+    "name": "John Polacek",
+    "url": "http://johnpolacek.com"
+  },
+  "main": [
+    "js/jquery.superscrollorama.js"
+  ],
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "tweenMax": "latest"
+  },
+  "_release": "d78ebb0653",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d78ebb0653a8635e7642f65a6c928755c31ec7a8"
+  },
+  "_source": "git://github.com/johnpolacek/superscrollorama.git",
+  "_target": "master",
+  "_originalSource": "SuperScrollorama"
+}

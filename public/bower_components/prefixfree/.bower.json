@@ -1,0 +1,13 @@
+{
+  "name": "prefixfree",
+  "homepage": "https://github.com/LeaVerou/prefixfree",
+  "_release": "dfa2e50412",
+  "_resolution": {
+    "type": "branch",
+    "branch": "gh-pages",
+    "commit": "dfa2e50412aeae8c48c0c5588ecf02d7ce2c3f81"
+  },
+  "_source": "https://github.com/LeaVerou/prefixfree.git",
+  "_target": "gh-pages",
+  "_originalSource": "https://github.com/LeaVerou/prefixfree.git"
+}

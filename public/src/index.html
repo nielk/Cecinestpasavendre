@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <!--<html class="no-js">--> <!--<![endif]-->
+<!--[if lt IE 9]>
+  <script>
+    alert("Ce site internet nécessite une version d'Internet Explorer supérieur ou égale à 10.0. Nous vous conseillons d'utiliser firefox pour une meilleur navigation web.");
+    document.location.href="http://www.mozilla.org/fr/firefox/features/";
+  </script>
+<![endif]-->
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Nantes Nord Webdoc // Ceci n'est pas à vendre</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    
+    <% if (grunt.config.get('dev')) {%>
+      <link rel="stylesheet" href="assets/css/video-js.css">
+    <%}%>
+    <% if (grunt.config.get('prod')) {%>
+      <link rel="stylesheet" href="assets/css/video-js.min.css">
+    <%}%>
+
+    <% if (grunt.config.get('dev')) {%>
+      <link rel="stylesheet" href="assets/css/main.css">
+    <%}%>
+    <% if (grunt.config.get('prod')) {%>
+      <link rel="stylesheet" href="assets/css/main.min.css">
+    <%}%>
+
+    <script type="text/javascript" src="assets/vendor/prefixfree.js"></script>
+  </head>
+<body>
+        <!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser... Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true"> Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- MODAL VLipp.fr -->
+<div class="modal fade" id="Vlipp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><div class="modal-propos">Vlipp.fr</div></h4>
+      </div>
+      <div class="modal-body">
+        <div class="modal-propos">
+          <h2>Vlipp.fr</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- MODAL NantesNord -->
+<div class="modal fade" id="nantesNord" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><div class="modal-propos">Les Ateliers Nantes Nord</div></h4>
+      </div>
+      <div class="modal-body">
+        <div class="modal-propos">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            <h2>Venenatis</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- MODAL La redac -->
+<div class="modal fade" id="redac" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><div class="modal-propos">La rédac' 2013</div></h4>
+      </div>
+      <div class="modal-body">
+        <div class="modal-propos">
+
+          <div class="row">
+            <div class="col-lg-4 col-sm-4 col-md-4">
+              <img src="assets/images/portrait-01.png" width="200px" class="img-circle photo-redac" />
+            </div>
+            <div class="col-lg-8 col-sm-8 col-md-8">
+            <h2>Pierre</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-sm-4 col-md-4 pull-right">
+              <img src="assets/images/portrait-01.png" width="200px" class="img-circle photo-redac" />
+            </div>
+            <div class="col-lg-8 col-sm-8 col-md-8 pull-left">
+              <h2>Paul</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-sm-4 col-md-4">
+              <img src="assets/images/portrait-01.png" width="200px" class="img-circle photo-redac" />
+            </div>
+            <div class="col-lg-8 col-sm-8 col-md-8">
+            <h2>Pierre</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-sm-4 col-md-4 pull-right">
+              <img src="assets/images/portrait-01.png" width="200px" class="img-circle photo-redac" />
+            </div>
+            <div class="col-lg-8 col-sm-8 col-md-8 pull-left">
+              <h2>Paul</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            </div>
+          </div>  
+
+          <div class="row">
+            <div class="col-lg-4 col-sm-4 col-md-4">
+              <img src="assets/images/portrait-01.png" width="200px" class="img-circle photo-redac" />
+            </div>
+            <div class="col-lg-8 col-sm-8 col-md-8">
+            <h2>Pierre</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-sm-4 col-md-4 pull-right">
+              <img src="assets/images/portrait-01.png" width="200px" class="img-circle photo-redac" />
+            </div>
+            <div class="col-lg-8 col-sm-8 col-md-8 pull-left">
+              <h2>Paul</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-sm-4 col-md-4">
+              <img src="assets/images/portrait-01.png" width="200px" class="img-circle photo-redac" />
+            </div>
+            <div class="col-lg-8 col-sm-8 col-md-8">
+            <h2>Pierre</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-sm-4 col-md-4 pull-right">
+              <img src="assets/images/portrait-01.png" width="200px" class="img-circle photo-redac" />
+            </div>
+            <div class="col-lg-8 col-sm-8 col-md-8 pull-left">
+              <h2>Paul</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            </div>
+          </div>            
+            
+          <div class="row">
+            <div class="col-lg-4 col-sm-4 col-md-4">
+              <img src="assets/images/portrait-01.png" width="200px" class="img-circle photo-redac" />
+            </div>
+            <div class="col-lg-8 col-sm-8 col-md-8">
+            <h2>Pierre</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            </div>
+          </div>
+            
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div class="container" id="top">
+
+  <div id="container-nav"> 
+    <header class="nav-header hidden-xs hidden-sm">
+      <div class="row">
+          <div id="logo" class="col-xs-12 col-sm-3 col-md-2 pull-left">
+            Ceci n'est pas à vendre
+          </div>
+          <nav class="col-sm-8 col-md-8 menu">
+            <ul class="list-inline">
+              <li><a><img src="assets/images/picto01.png" alt="L'appareil photo" id="picto1" class="img-responsive"></a></li>
+              <li><a><img src="assets/images/picto02.png" alt="La Montre" id="picto2" class="img-responsive"></a></li>
+              <li><a><img src="assets/images/picto03.png" alt="Le Piano" id="picto3" class="img-responsive"></a></li>
+              <li><a><img src="assets/images/picto04.png" alt="La Robe de chambre" id="picto4" class="img-responsive"></a></li>
+              <li><a><img src="assets/images/picto05.png" alt="La Musique" id="picto5" class="img-responsive"></a></li>
+              <li><a><img src="assets/images/picto06.png" alt="La Prière" id="picto6" class="img-responsive"></a></li>
+              <li><a><img src="assets/images/picto07.png" alt="Breizh" id="picto7" class="img-responsive"></a></li>
+              <li><a><img src="assets/images/picto08.png" alt="Le chat" id="picto8" class="img-responsive"></a></li>
+              <li><a href="./contrib.html"><img src="assets/images/picto9.png" alt="Participer" id="picto10" class="img-responsive">Participer</a></li>
+              <li><a><img src="assets/images/picto10.png" alt="A propos" id="picto9" class="img-responsive">A propos</a></li>
+            </ul>
+          </nav>
+          <a href="http://www.vlipp.fr" target="_blank"><img src="assets/images/VLIPP-logo-black.png" alt="..." class="img-responsive" id="vlipp-logo"></a>
+      </div>
+    </header>
+    <div class="nav-header-phone-portrait">
+      <div class="row">
+        <div id="logo">
+          Ceci n'est pas à vendre
+        </div>
+        <table class="nav-phone" border="0">
+          <tbody>
+            <tr>
+              <td><a><img src="assets/images/picto01.png" alt="..." id="picto-min-1" class="picto-mini"></a></td>
+              <td><a><img src="assets/images/picto02.png" alt="..." id="picto-min-2" class="picto-mini"></a></td>
+            </tr>
+            <tr>
+              <td><a><img src="assets/images/picto03.png" alt="..." id="picto-min-3" class="picto-mini"></a></td>
+              <td><a><img src="assets/images/picto04.png" alt="..." id="picto-min-4" class="picto-mini"></a></td>
+            </tr>
+            <tr>
+              <td><a><img src="assets/images/picto05.png" alt="..." id="picto-min-5" class="picto-mini"></a></td>
+              <td><a><img src="assets/images/picto06.png" alt="..." id="picto-min-6" class="picto-mini"></a></td>
+            </tr>
+            <tr>
+              <td><a><img src="assets/images/picto07.png" alt="..." id="picto-min-7" class="picto-mini"></a></td>
+              <td><a><img src="assets/images/picto08.png" alt="..." id="picto-min-8" class="picto-mini"></a></td>
+            </tr>
+            <tr>
+              <td><a><img src="assets/images/picto10.png" alt="..." id="picto-min-9" class="img-responsive">A propos</a></td>
+              <td><a href="./contrib.html"><img src="assets/images/picto9.png" alt="..." id="picto10" class="img-responsive">Participer</a></td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.vlipp.fr" target="_blank"><img src="assets/images/VLIPP-logo-black.png" alt="..." class="img-responsive" id="vlipp-logo"></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="nav-header-phone-landscape">
+      <div class="row">
+        <div id="logo">
+          Ceci n'est pas à vendre
+        </div>
+        <table class="nav-phone" border="0">
+          <tbody>
+            <tr>
+              <td><a><img src="assets/images/picto01.png" alt="..." id="picto-min-landscape-1" class="picto-mini"></a></td>
+              <td><a><img src="assets/images/picto02.png" alt="..." id="picto-min-landscape-2" class="picto-mini"></a></td>
+              <td><a><img src="assets/images/picto03.png" alt="..." id="picto-min-landscape-3" class="picto-mini"></a></td>
+              <td><a><img src="assets/images/picto04.png" alt="..." id="picto-min-landscape-4" class="picto-mini"></a></td>
+              <td><a href="./contrib.html"><img src="assets/images/picto9.png" alt="..." id="picto10" class="img-responsive">Participer</a></td>
+            </tr>
+            <tr>
+              <td><a><img src="assets/images/picto05.png" alt="..." id="picto-min-landscape-5" class="picto-mini"></a></td>
+              <td><a><img src="assets/images/picto06.png" alt="..." id="picto-min-landscape-6" class="picto-mini"></a></td>
+              <td><a><img src="assets/images/picto07.png" alt="..." id="picto-min-landscape-7" class="picto-mini"></a></td>
+              <td><a><img src="assets/images/picto08.png" alt="..." id="picto-min-landscape-8" class="picto-mini"></a></td>
+              <td><a><img src="assets/images/picto10.png" alt="..." id="picto-min-landscape-9" class="img-responsive">A propos</a></td>
+            </tr>
+          </tbody>
+        </table>
+          <a href="http://www.vlipp.fr" target="_blank"><img src="assets/images/VLIPP-logo-black.png" alt="..." class="img-responsive" id="vlipp-logo-landscape"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Illustration d'accueil -->
+  <section id="section-00">
+    <ul class="slide">
+      <li class="slide-01">
+        <div class="row centered">
+          <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-2 texte-illustration">
+            <h2>Ceci n'est pas à vendre.</h2>
+            Austin Truffaut polaroid, readymade Thundercats post-ironic try-hard VHS actually gentrify ennui.  90's American Apparel trust fund Austin authentic.  Narwhal four loko blog, post-ironic fingerstache Brooklyn drinking vinegar fixie.  Hashtag vinyl +1 dreamcatcher Etsy.
+            <div class="slideButton-illus">En savoir plus...</div>
+          </div>
+          <div class="col-md-offset-3 col-sm-offset-3 col-sm-5 col-md-5">
+            <div class="social">
+                  <div class="fb-like" data-href="http://cecinestpasavendre.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/#section-05" data-lang="fr">Tweeter</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="slide-02">
+        <div class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <h2 id="propos">Le vlipp.fr</h2> polaroid, readymade Thundercats post-ironic try-hard VHS actually gentrify ennui.  90's American Apparel trust fund Austin authentic.
+            <a data-toggle="modal" href="#Vlipp"><div class="button">En savoir plus...</div></a>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <h2>Les Ateliers Nantes Nord</h2> polaroid, readymade Thundercats post-ironic try-hard VHS actually gentrify ennui.  90's American Apparel trust fund Austin authentic.
+            <a data-toggle="modal" href="#nantesNord"><div class="button">En savoir plus...</div></a>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <h2>La rédac'2013</h2> polaroid, readymade Thundercats post-ironic try-hard VHS actually gentrify ennui.  90's American Apparel trust fund Austin authentic.
+            <a data-toggle="modal" href="#redac"><div class="button">En savoir plus...</div></a>
+          </div>
+          <div class="col-md-10 col-md-offset-1">
+            <div class="center">
+              <button type="button" class="btn-circle-illus">retour</button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul> 
+  </section>
+  <!-- /Illustration d'accueil -->
+
+  <section id="section-01">
+    <ul class="slide">
+      <li class="slide-01">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2 pull-left play-right">
+            <div class="slideButton">Voir la video</div>
+          </div>
+          <div class="col-sm-5 col-md-5 col-lg-5 pull-right texte-sm-right">
+            <h2>Le Piano</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+
+                <div class="social">
+                  <div class="fb-like" data-href="http://cecinestpasavendre.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/#section-05" data-lang="fr">Tweeter</a>
+                </div>
+          </div>
+        </div>
+      </li>
+      <li class="slide-02">
+        <div class="row">
+          <div class="col-md-12">
+            <video id="video-player-01" class="video-js vjs-default-skin video-center"
+                controls preload="auto" width="auto" height="auto"
+                poster="http://video-js.zencoder.com/oceans-clip.png"
+                data-setup='{"example_option":true}'>
+               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            </video>
+            <button type="button" class="btn-circle center">retour</button>
+          </div>
+        </div>
+        <div class="row center">
+          
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="section-02">
+    <ul class="slide">
+      <li class="slide-01">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2 pull-right play-left">
+            <div class="slideButton">Voir la video</div>
+          </div>
+          <div class="col-sm-5 col-md-5 col-lg-5 pull-left texte-sm-left">
+            <h2>Le Chat</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+                
+                <div class="social">
+                  <div class="fb-like" data-href="http://cecinestpasavendre.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/#section-05" data-lang="fr">Tweeter</a>
+                </div>
+                
+          </div>
+        </div>
+      </li>
+      <li class="slide-02">
+        <div class="row">
+          <div class="col-md-12">
+            <video id="video-player-02" class="video-js vjs-default-skin video-center"
+                controls preload="auto" width="auto" height="auto"
+                poster="http://video-js.zencoder.com/oceans-clip.png"
+                data-setup='{"example_option":true}'>
+               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            </video>
+            <button type="button" class="btn-circle center">retour</button>
+          </div>
+        </div>
+        <div class="row center">
+          
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="section-03">
+    <ul class="slide">
+      <li class="slide-01">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2 pull-left play-right">
+            <div class="slideButton">Voir la video</div>
+          </div>
+          <div class="col-sm-5 col-md-5 col-lg-5 pull-right texte-sm-right">
+            <h2>La Montre</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+
+                <div class="social">
+                  <div class="fb-like" data-href="http://cecinestpasavendre.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/#section-05" data-lang="fr">Tweeter</a>
+                </div>
+          </div>
+        </div>
+      </li>
+      <li class="slide-02">
+        <div class="row">
+          <div class="col-md-12">
+            <video id="video-player-03" class="video-js vjs-default-skin video-center"
+                controls preload="auto" width="auto" height="auto"
+                poster="http://video-js.zencoder.com/oceans-clip.png"
+                data-setup='{"example_option":true}'>
+               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            </video>
+            <button type="button" class="btn-circle center">retour</button>
+          </div>
+        </div>
+        <div class="row center">
+          
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="section-04">
+    <ul class="slide">
+      <li class="slide-01">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2 pull-right play-left">
+            <div class="slideButton">Voir la video</div>
+          </div>
+          <div class="col-sm-5 col-md-5 col-lg-5 pull-left texte-sm-left">
+            <h2>La robe</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+                
+                <div class="social">
+                  <div class="fb-like" data-href="http://cecinestpasavendre.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/#section-05" data-lang="fr">Tweeter</a>
+                </div>
+                
+          </div>
+        </div>
+      </li>
+      <li class="slide-02">
+        <div class="row">
+          <div class="col-md-12">
+            <video id="video-player-04" class="video-js vjs-default-skin video-center"
+                controls preload="auto" width="auto" height="auto"
+                poster="http://video-js.zencoder.com/oceans-clip.png"
+                data-setup='{"example_option":true}'>
+               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            </video>
+            <button type="button" class="btn-circle center">retour</button>
+          </div>
+        </div>
+        <div class="row center">
+          
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="section-05">
+    <ul class="slide">
+      <li class="slide-01">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2 pull-left play-right">
+            <div class="slideButton">Voir la video</div>
+          </div>
+          <div class="col-sm-5 col-md-5 col-lg-5 pull-right texte-sm-right">
+            <h2>La prière</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+
+                <div class="social">
+                  <div class="fb-like" data-href="http://cecinestpasavendre.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/#section-05" data-lang="fr">Tweeter</a>
+                </div>
+          </div>
+        </div>
+      </li>
+      <li class="slide-02">
+        <div class="row">
+          <div class="col-md-12">
+            <video id="video-player-05" class="video-js vjs-default-skin video-center"
+                controls preload="auto" width="auto" height="auto"
+                poster="http://video-js.zencoder.com/oceans-clip.png"
+                data-setup='{"example_option":true}'>
+               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            </video>
+            <button type="button" class="btn-circle center">retour</button>
+          </div>
+        </div>
+        <div class="row center">
+          
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="section-06">
+    <ul class="slide">
+      <li class="slide-01">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2 pull-right play-left">
+            <div class="slideButton">Voir la video</div>
+          </div>
+          <div class="col-sm-5 col-md-5 col-lg-5 pull-left texte-sm-left">
+            <h2>L'appareil photo</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+                
+                <div class="social">
+                  <div class="fb-like" data-href="http://cecinestpasavendre.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/#section-05" data-lang="fr">Tweeter</a>
+                </div>
+                
+          </div>
+        </div>
+      </li>
+      <li class="slide-02">
+        <div class="row">
+          <div class="col-md-12">
+            <video id="video-player-06" class="video-js vjs-default-skin video-center"
+                controls preload="auto" width="auto" height="auto"
+                poster="http://video-js.zencoder.com/oceans-clip.png"
+                data-setup='{"example_option":true}'>
+               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            </video>
+            <button type="button" class="btn-circle center">retour</button>
+          </div>
+        </div>
+        <div class="row center">
+          
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="section-07">
+    <ul class="slide">
+      <li class="slide-01">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2 pull-left play-right">
+            <div class="slideButton">Voir la video</div>
+          </div>
+          <div class="col-sm-5 col-md-5 col-lg-5 pull-right texte-sm-right">
+            <h2>La poële</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+
+                <div class="social">
+                  <div class="fb-like" data-href="http://cecinestpasavendre.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/#section-05" data-lang="fr">Tweeter</a>
+                </div>
+          </div>
+        </div>
+      </li>
+      <li class="slide-02">
+        <div class="row">
+          <div class="col-md-12">
+            <video id="video-player-07" class="video-js vjs-default-skin video-center"
+                controls preload="auto" width="auto" height="auto"
+                poster="http://video-js.zencoder.com/oceans-clip.png"
+                data-setup='{"example_option":true}'>
+               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            </video>
+            <button type="button" class="btn-circle center">retour</button>
+          </div>
+        </div>
+        <div class="row center">
+          
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="section-08">
+    <ul class="slide">
+      <li class="slide-01">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2 pull-right play-left">
+            <div class="slideButton">Voir la video</div>
+          </div>
+          <div class="col-sm-5 col-md-5 col-lg-5 pull-left texte-sm-left">
+            <h2>La musique</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+                
+                <div class="social">
+                  <div class="fb-like" data-href="http://cecinestpasavendre.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/#section-05" data-lang="fr">Tweeter</a>
+                </div>
+                
+          </div>
+        </div>
+      </li>
+      <li class="slide-02">
+        <div class="row">
+          <div class="col-md-12">
+            <video id="video-player-08" class="video-js vjs-default-skin video-center"
+                controls preload="auto" width="auto" height="auto"
+                poster="http://video-js.zencoder.com/oceans-clip.png"
+                data-setup='{"example_option":true}'>
+               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            </video>
+            <button type="button" class="btn-circle center">retour</button>
+          </div>
+        </div>
+        <div class="row center">
+          
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <div class="row">
+      <div class="col-sm-2 col-md-2">
+        <h3>Social</h3>
+        <ul class="footer-list">
+          <li><a href="https://twitter.com/vlipp" target="_blank">Twitter</a></li>
+          <li><a href="https://www.facebook.com/vlipp.fr" target="_blank">Facebook</a></li>
+          <li><a href="http://www.vlipp.fr" target="_blank">Vlipp.fr</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-3 col-sm-2 col-md-2">
+        <h3>Liens</h3>
+        <ul class="footer-list">
+          <li><a href="http://www.vlipp.fr" target="_blank">Dipp</a></li>
+          <li><a href="http://vann.vlipp.fr" target="_blank">Voyage à Nantes nord</a></li>
+          <li><a data-toggle="modal" href="#redac">Crédits</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-2 pull-right">
+      <a href="http://www.vlipp.fr" target='_blank'><img src="assets/images/VLIPP-logo-black.png" width="110px" id="vlipp-footer"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4" id="copyright">
+        <small>
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/fr/80x15.png" /></a>
+        </small>
+      </div>
+    </div>
+  </footer>
+  <!-- /footer -->
+  <div id="scroll-top">^</div>
+
+</div>
+<!-- /container -->
+
+    
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/vendor/jquery.min.js"><\/script>')</script>
+
+<script src="assets/vendor/modernizr.js"></script>
+
+<script src="assets/vendor/bootstrap.min.js"></script>
+
+<script src="assets/vendor/tweenMax.js"></script>
+<script src="assets/vendor/SuperScrollorama.js"></script>
+
+<script src="assets/vendor/jQuery-Parallax.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js"></script>
+<script src="./assets/vendor/ngUpload.js"></script>
+
+<script src="assets/vendor/video.js.js"></script>
+
+<% if (grunt.config.get('dev')) {%>
+  <script src="./assets/js/main.js"></script>
+  <script src="http://localhost:35729/livereload.js"></script>
+<%}%>
+
+<% if (grunt.config.get('prod')) {%>
+  <script src="./assets/js/main.min.js"></script>
+<%}%>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src='//www.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>

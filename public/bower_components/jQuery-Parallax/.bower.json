@@ -1,0 +1,13 @@
+{
+  "name": "jQuery-Parallax",
+  "homepage": "https://github.com/IanLunn/jQuery-Parallax",
+  "_release": "bdcb08f5b6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "bdcb08f5b6936d1920146ba7973112c3341eba8c"
+  },
+  "_source": "https://github.com/IanLunn/jQuery-Parallax.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/IanLunn/jQuery-Parallax.git"
+}

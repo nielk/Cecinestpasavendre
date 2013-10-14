@@ -1,0 +1,70 @@
+// ===========================================================
+// Variables
+// ===========================================================
+
+	$font-header: 'Magritte', Verdana, sans-serif;
+	$font: 'Quicksand', Verdana, sans-serif;
+  	$font-link: white;
+	$h1: 5em;
+	$h2: 2em;
+	$h3: 2em;
+	$h4: 3em;
+
+// ===========================================================
+// Sources
+// ===========================================================
+
+	@import url(http://fonts.googleapis.com/css?family=Lobster:300,400,700|Sacramento|Dawning+of+a+New+Day|Open+Sans:300,600,400|Quicksand:400,300,700);
+	@font-face {
+	  font-family: 'Magritte';
+	  src: url('../fonts/Holmes207.ttf');
+	}
+	@font-face {
+	  font-family: 'Holmes';
+	  src: url('../fonts/Holmes207.ttf');
+	  /*src: url('../fonts/Lobster.ttf');*/
+	}
+
+// ===========================================================
+// Head styles
+// ===========================================================
+	
+	@mixin head-group {
+		font-family: $font-header;
+	  }
+
+	h1 {
+	@include head-group;
+	font-size: $h1;
+	}
+
+	h2, h3 {
+		@include head-group;
+		font-size: $h2;
+	}
+
+	h4 {
+		@include head-group;
+		font-size: $h4;
+	}
+
+// ===========================================================
+// Links style
+// ===========================================================
+
+	a {
+	color: $font-link;
+		&:hover {
+			color: darken($font-link,30%);
+			text-decoration: none;
+			transition: all 0.5s;
+		}
+	}
+
+// ===========================================================
+// paragraph styles
+// ===========================================================
+
+	p {
+	
+	}
