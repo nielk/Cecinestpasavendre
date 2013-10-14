@@ -1,5 +1,5 @@
 {
-  "name": "nantes-nord",
+  "name": "nantes_nord",
   "version": "0.0.1",
   "ignore": [
     "**/.*",
@@ -10,16 +10,12 @@
   ],
   "dependencies": {
     "modernizr": "~2.6.2",
-    "bootstrap": "~3.0.0-rc1",
+    "bootstrap": "~3.0.0",
     "jquery": "~2.0.3",
-    "SuperScrollorama": "master",
-    "angularjs": "*",
-    "angular-resource": "~1.0.8",
-    "ngUpload": "~0.3.20"
-  },
-  "devDependencies": {
-    "jQuery-Parallax": "https://github.com/IanLunn/jQuery-Parallax.git",
-    "video.js": "~4.1.0",
-    "prefixfree": "https://github.com/LeaVerou/prefixfree.git#gh-pages"
+    "video.js": "~4.2.1",
+    "prefix-free": "https://github.com/LeaVerou/prefixfree.git#gh-pages",
+    "angular": "~1.2.0",
+    "angular-resource": "~1.2.0",
+    "ngUpload": "~0.3.21"
   }
 }

@@ -1,3 +1,4 @@
+'use strict';
 var pngquantPath = require('pngquant-bin').path,
 	jpegtranPath = require('jpegtran-bin').path,
 	imageMagick  = require('imagemagick'),
@@ -22,10 +23,11 @@ var minify = function(imagePath, callback){
 				case '.png':
 					// resize dimension of image
 					imageMagick.convert([imagePath, '-resize', '500x420', imagePath], function(err) {
-						if (err) cb(err);
+						if (err) callback(err);
 						// optimize image
 						execFile(pngquantPath, ['--force', '--ext', '.png', imagePath], function(err) {
-							cb(err ? err : null);
+							if (err) callback(err);
+							callback();
 						});
 					});
 					break;
@@ -34,30 +36,22 @@ var minify = function(imagePath, callback){
 				case '.jpeg':
 					// resize dimension of image
 					imageMagick.convert([imagePath, '-resize', '500x420', imagePath], function(err) {
-						if(err) cb(err);
+						if(err) callback(err);
 						// optimize image
 						execFile(jpegtranPath, ['-outfile', imagePath, imagePath], function(err) {
-							cb(err ? err : null);
+							if (err) callback(err);
+							callback();
 						});
 					});
 					break;
 				// image extension not allowed
 				default:
-					cb(new Error(), 'Image format not supported (accepted formats: png, jpg)');
-			}		
+					callback(new Error('Image format not supported (accepted formats: png, jpg)'));
+			}
 		} else { // another type of error
-			cb(new Error(), 'Command failed:   error: image does not exist\n');
+			callback(new Error('Image does not exist'));
 		}
 	});
-	
-	// callback
-	var cb = function(err, msg){
-		if (callback && typeof(callback) === 'function' && err !== null) {
-			callback(new Error(msg));
-		} else {
-			callback();
-		}
-	};
 };
 
 module.exports = minify;

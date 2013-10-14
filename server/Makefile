@@ -9,10 +9,10 @@ clean:
 	rm -rf reports
 
 test:
-	$(MOCHA) -R spec --timeout 10000 $(TESTS)
+	$(MOCHA) -R spec $(TESTS)
 
 jshint:
-	$(JSHINT) app test
+	$(JSHINT) --show-non-errors app test
 
 coverage:
 	@# check if reports folder exists, if not create it
