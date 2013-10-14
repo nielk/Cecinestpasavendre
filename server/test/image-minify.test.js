@@ -43,7 +43,7 @@ describe('image-minify', function() {
 	it('should return an error in the callback if the image does not exist', function(done) {
 		minify('lostImage.png', function(err) {
 			expect(err).to.be.an.instanceof(Error);
-			expect(err.message).to.equal('Command failed:   error: image does not exist\n');
+			expect(err.message).to.equal('Image does not exist');
 			done();
 		});
 	});

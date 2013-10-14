@@ -18,7 +18,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    
+
     <% if (grunt.config.get('dev')) {%>
       <link rel="stylesheet" href="assets/css/video-js.css">
     <%}%>
@@ -33,7 +33,7 @@
       <link rel="stylesheet" href="assets/css/main.min.css">
     <%}%>
 
-    <script type="text/javascript" src="assets/vendor/prefixfree.js"></script>
+    <script type="text/javascript" src="./assets/vendor/prefix-free.js"></script>
   </head>
 <body>
         <!--[if lt IE 7]>
@@ -137,7 +137,27 @@
               <h2>Paul</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
             </div>
-          </div>  
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-sm-4 col-md-4">
+              <img src="assets/images/portrait-01.png" width="200px" class="img-circle photo-redac" />
+            </div>
+            <div class="col-lg-8 col-sm-8 col-md-8">
+            <h2>Pierre</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-sm-4 col-md-4 pull-right">
+              <img src="assets/images/portrait-01.png" width="200px" class="img-circle photo-redac" />
+            </div>
+            <div class="col-lg-8 col-sm-8 col-md-8 pull-left">
+              <h2>Paul</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            </div>
+          </div>
 
           <div class="row">
             <div class="col-lg-4 col-sm-4 col-md-4">
@@ -169,26 +189,6 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-lg-4 col-sm-4 col-md-4 pull-right">
-              <img src="assets/images/portrait-01.png" width="200px" class="img-circle photo-redac" />
-            </div>
-            <div class="col-lg-8 col-sm-8 col-md-8 pull-left">
-              <h2>Paul</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
-            </div>
-          </div>            
-            
-          <div class="row">
-            <div class="col-lg-4 col-sm-4 col-md-4">
-              <img src="assets/images/portrait-01.png" width="200px" class="img-circle photo-redac" />
-            </div>
-            <div class="col-lg-8 col-sm-8 col-md-8">
-            <h2>Pierre</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
-            </div>
-          </div>
-            
         </div>
       </div>
       <div class="modal-footer">
@@ -202,7 +202,7 @@
 
 <div class="container" id="top">
 
-  <div id="container-nav"> 
+  <div id="container-nav">
     <header class="nav-header hidden-xs hidden-sm">
       <div class="row">
           <div id="logo" class="col-xs-12 col-sm-3 col-md-2 pull-left">
@@ -328,7 +328,7 @@
           </div>
         </div>
       </li>
-    </ul> 
+    </ul>
   </section>
   <!-- /Illustration d'accueil -->
 
@@ -365,7 +365,7 @@
           </div>
         </div>
         <div class="row center">
-          
+
         </div>
       </li>
     </ul>
@@ -381,12 +381,12 @@
           <div class="col-sm-5 col-md-5 col-lg-5 pull-left texte-sm-left">
             <h2>Le Chat</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
-                
+
                 <div class="social">
                   <div class="fb-like" data-href="http://cecinestpasavendre.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
                   <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/#section-05" data-lang="fr">Tweeter</a>
                 </div>
-                
+
           </div>
         </div>
       </li>
@@ -405,7 +405,7 @@
           </div>
         </div>
         <div class="row center">
-          
+
         </div>
       </li>
     </ul>
@@ -444,7 +444,7 @@
           </div>
         </div>
         <div class="row center">
-          
+
         </div>
       </li>
     </ul>
@@ -460,12 +460,12 @@
           <div class="col-sm-5 col-md-5 col-lg-5 pull-left texte-sm-left">
             <h2>La robe</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
-                
+
                 <div class="social">
                   <div class="fb-like" data-href="http://cecinestpasavendre.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
                   <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/#section-05" data-lang="fr">Tweeter</a>
                 </div>
-                
+
           </div>
         </div>
       </li>
@@ -484,7 +484,7 @@
           </div>
         </div>
         <div class="row center">
-          
+
         </div>
       </li>
     </ul>
@@ -523,7 +523,7 @@
           </div>
         </div>
         <div class="row center">
-          
+
         </div>
       </li>
     </ul>
@@ -539,12 +539,12 @@
           <div class="col-sm-5 col-md-5 col-lg-5 pull-left texte-sm-left">
             <h2>L'appareil photo</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
-                
+
                 <div class="social">
                   <div class="fb-like" data-href="http://cecinestpasavendre.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
                   <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/#section-05" data-lang="fr">Tweeter</a>
                 </div>
-                
+
           </div>
         </div>
       </li>
@@ -563,7 +563,7 @@
           </div>
         </div>
         <div class="row center">
-          
+
         </div>
       </li>
     </ul>
@@ -602,7 +602,7 @@
           </div>
         </div>
         <div class="row center">
-          
+
         </div>
       </li>
     </ul>
@@ -618,12 +618,12 @@
           <div class="col-sm-5 col-md-5 col-lg-5 pull-left texte-sm-left">
             <h2>La musique</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
-                
+
                 <div class="social">
                   <div class="fb-like" data-href="http://cecinestpasavendre.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
                   <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/#section-05" data-lang="fr">Tweeter</a>
                 </div>
-                
+
           </div>
         </div>
       </li>
@@ -642,7 +642,7 @@
           </div>
         </div>
         <div class="row center">
-          
+
         </div>
       </li>
     </ul>
@@ -685,7 +685,7 @@
 </div>
 <!-- /container -->
 
-    
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -699,27 +699,19 @@
 <script>window.jQuery || document.write('<script src="assets/vendor/jquery.min.js"><\/script>')</script>
 
 <script src="assets/vendor/modernizr.js"></script>
-
 <script src="assets/vendor/bootstrap.min.js"></script>
-
-<script src="assets/vendor/tweenMax.js"></script>
-<script src="assets/vendor/SuperScrollorama.js"></script>
-
-<script src="assets/vendor/jQuery-Parallax.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js"></script>
-<script src="./assets/vendor/ngUpload.js"></script>
-
 <script src="assets/vendor/video.js.js"></script>
+<script src="assets/vendor/angular.js"></script>
+<script src="assets/vendor/angular-resource.js"></script>
+<script src="assets/vendor/ngUpload.js"></script>
 
 <% if (grunt.config.get('dev')) {%>
-  <script src="./assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
   <script src="http://localhost:35729/livereload.js"></script>
 <%}%>
 
 <% if (grunt.config.get('prod')) {%>
-  <script src="./assets/js/main.min.js"></script>
+  <script src="assets/js/main.min.js"></script>
 <%}%>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
