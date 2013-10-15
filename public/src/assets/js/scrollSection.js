@@ -26,7 +26,7 @@ $(document).ready(function (){
 		scrollAnimation('#picto-min-landscape-'+i, '#section-0'+i);
 	}
 
-	scrollAnimation('#logo, #picto-min-9, #picto-min-landscape-9, #picto9','#propos');
+	scrollAnimation('#picto-min-9, #picto-min-landscape-9, #picto9','#propos');
 
-	scrollAnimation('#scroll-top', '.container');
+	scrollAnimation('#scroll-top, #logo', '#top');
 });
