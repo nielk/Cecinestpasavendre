@@ -92,7 +92,7 @@ nav ul li {
 	color: $font-color-header;
 	height: 200px;
 	padding: 10px 20px 30px 20px;
-	background-color: $bg-color;
+	background-color: $nav-bg-color1;
 	@include gradient-bg(138deg, $nav-bg-color1, $nav-bg-color2, 80%);
 	transform: translateY(0%);
 	transition: all 0.5s;
