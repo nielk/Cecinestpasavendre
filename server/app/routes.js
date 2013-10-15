@@ -1,11 +1,10 @@
 var schema   = require('./schema'),
 	Chose    = schema.Chose,
-	format   = require('util').format,
 	fs       = require('fs'),
 	crypto   = require('crypto'),
 	fs       = require('fs'),
 	path     = require('path'),
-	minify   = require('./image-minify.js');
+	minify   = require('./image-minify.js'),
 	mail     = require('./mail.js');
 
 // this is the key will be sent in email link
@@ -103,11 +102,11 @@ var insertChose = function (req, res) {
 				};
 
 				// send an email to the contributor
-				msg = "Bonjour ! L'objet que vous venez de posté sur <a href='http://cecinestpasavendre.vlipp.fr'>"+
-					"http://cecinestpasavendre.vlipp.fr</a> est en cours de validation. Vous receverez"+
+				var msg = "Bonjour ! L'objet que vous venez de poster sur <a href='http://cecinestpasavendre.vlipp.fr'>" +
+					"http://cecinestpasavendre.vlipp.fr</a> est en cours de validation. Vous receverez" +
 					" un email lorsqu'il sera validé.";
-				subject = "Votre objet est en cours de validation";
-				to = req.body.email;
+				var subject = "Votre objet est en cours de validation";
+				var to = req.body.email;
 
 				mail(msg, subject, to, function(err, status) {
 					if(err) {
@@ -117,9 +116,9 @@ var insertChose = function (req, res) {
 					}
 
 					// send an email to the moderator
-					var msg = "<b>Hello, un nouvel objet a été ajouté ! cliquer ici pour le valider : "+
-					"<a href=\"http://localhost:9999/valid/"+imageName+"/"+password+"\">cliquer</a></b>",
-					subject = "Nouveau contenu à valider",
+					msg = "<b>Hello, un nouvel objet a été ajouté ! cliquer ici pour le valider : " +
+					"<a href=\"http://localhost:9999/valid/" + imageName + "/" + password + "\">cliquer</a></b>";
+					subject = "Nouveau contenu à valider";
 					to = moderator;
 
 					mail(msg, subject, to, function(err, status) {
@@ -136,7 +135,7 @@ var insertChose = function (req, res) {
 						}
 					});
 				});
-	
+
 			}
 		});
 	}
@@ -209,7 +208,7 @@ var validationChose = function (req,res) {
 	} else  { // pasword wrong
 		res.send('Permission refusé', 403);
 	}
-};	
+};
 
 /**
  * Update the new validated chose
@@ -236,9 +235,9 @@ var updateChose = function(req,res) {
 				res.send('L\'Objet n\'a pas été validé !', 403);
 			} else {
 				// if checbox 'supprimer' checked then
-				if(req.body.deleted === 'on') { 
+				if(req.body.deleted === 'on') {
 						// delete the current chose
-						chose.remove(function(err){ 
+						chose.remove(function(err){
 							if(err) {
 								res.send('l\'objet n\'a pas été supprimé ! :( \n'+err,403);
 							} else {
@@ -246,8 +245,8 @@ var updateChose = function(req,res) {
 							}
 						});
 				} else {
-					
-					// update the fields of the chose 
+
+					// update the fields of the chose
 					// with the eventual new contents...
 					chose.author = req.body.author;
 					chose.email = req.body.email;
@@ -256,14 +255,14 @@ var updateChose = function(req,res) {
 					chose.image = imageName;
 					// set the chose validated
 					chose.valid = true;
-					
+
 					// save the new updated content of the chose
 					chose.save(function(err){
 
 						res.send('Objet validé !', 200);
 
 						// send email to contributor to notify the new validated content
-						var msg = "Bonjour ! L'objet que vous avez poster sur <a href='http://cecinestpasavendre.vlipp.fr'>"+
+						var msg = "Bonjour ! L'objet que vous avez posté sur <a href='http://cecinestpasavendre.vlipp.fr'>"+
 							"http://cecinestpasavendre.vlipp.fr</a> a été validé ! Vous pouvez le consulter sur "+
 							"cette page : <a href='http://cecinestpasavendre.vlipp.fr/contrib.html'>"+
 							"http://cecinestpasavendre.vlipp.fr/contrib.html</a>",

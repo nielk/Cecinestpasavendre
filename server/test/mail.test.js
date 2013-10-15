@@ -1,12 +1,35 @@
 'use strict';
-var mail = require('../app/mail'),
+var nodemailer = require('nodemailer'),
 	chai = require('chai'),
+	sinon = require('sinon'),
 	expect = chai.expect,
-	should = chai.should();
+	mail = require('../app/mail'),
+	sendMail;
 
-var req, res = 'test';
+// fakes the sendMail function
+var sendMailStub = function() {
+	// stub createTransport to return an object that has a fake sendMail function
+	var stub = sinon.stub(nodemailer, 'createTransport', function() {
+		return {
+			sendMail: function(mailOptions, callback) {
+				// stores the mailOptions for further checks
+				stub.mailOptions = mailOptions;
+				callback();
+			}
+		};
+	});
+	return stub;
+};
 
 describe('mailer', function() {
+
+	beforeEach(function(){
+		sendMail = sendMailStub();
+	});
+
+	afterEach(function(){
+		sendMail.restore();
+	});
 
 	// error: arg is not a string
 	it('should return an error in the callback if an argument is not a string', function(done) {
@@ -29,10 +52,14 @@ describe('mailer', function() {
 	// sucess
 	it('should return no error in the callback if every arguments are OK', function(done) {
 		mail('this is a test', 'test', 'oger.alexandre@gmail.com', function(err) {
-			setTimeout(function(err){
-			should.not.exist(err);
+			// weird chai syntax, disable jshint complaints here
+			/* jshint expr:true */
+			expect(err).to.be.undefined;
+			expect(sendMail.mailOptions.from).to.equal('cecinestpasavendre ✔ <cecinestpasavendre@vlipp.fr>');
+			expect(sendMail.mailOptions.to).to.equal('oger.alexandre@gmail.com');
+			expect(sendMail.mailOptions.subject).to.equal('test');
+			expect(sendMail.mailOptions.html).to.equal('this is a test');
 			done();
-			},8*1000); // wait 8 seconds
 		});
 	});
 });

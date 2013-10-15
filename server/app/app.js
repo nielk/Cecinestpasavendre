@@ -2,7 +2,6 @@ var express          = require('express'),
 	app              = express(),
 	routes           = require('./routes'),
 	schema           = require('./schema'),
-	path             = require('path');
 	expressValidator = require('express-validator');
 
 // prod urls and port with dev fallback
