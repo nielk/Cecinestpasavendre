@@ -876,7 +876,8 @@ form {
       min-width: 200px; } }
 
 .container-chose {
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 4%; }
   @media screen and (min-width: 1024px) {
     .container-chose {
       width: 80%;
