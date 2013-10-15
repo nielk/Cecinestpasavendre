@@ -1,19 +1,25 @@
+var target = document.getElementById('spinner');
+new Spinner({color:'#fff', lines: 12}).spin(target);
+
 var myApp = angular.module('myApp',['ngResource', 'ngUpload']);
 
-myApp.directive('validFile',function() {
-	return {
-		require:'ngModel',
-		link: function(scope,el,attrs,ngModel) {
-			//change event is fired when file is selected
-			el.bind('change', function() {
-				scope.$apply(function() {
-					ngModel.$setViewValue(el.val());
-					ngModel.$render();
-				});
-			});
-		}
-	};
-});
+// myApp.directive('validFile',function() {
+// 	return {
+// 		require:'ngModel',
+// 		link: function(scope,el,attrs,ngModel) {
+// 			//change event is fired when file is selected
+// 			el.bind('change', function() {
+// 				scope.$apply(function() {
+// 					ngModel.$setViewValue(el.val());
+// 					ngModel.$render();
+// 				});
+// 			});
+// 		}
+// 	};
+// });
+
+
+
 
 myApp.factory('Chose', function($resource) {
 	return $resource('/chose');
@@ -43,7 +49,8 @@ function myCtrl($scope, Chose) {
 
 	// verify if all fields are correct
 	$scope.valideForm = function() {
-		if($scope.ok() && $scope.chose_form.$valid && $scope.isFileChanged()) {
+		// if($scope.ok() && $scope.chose_form.$valid && $scope.isFileChanged()) {
+		if($scope.ok() && $scope.chose_form.$valid) {
 			return false;
 		}
 		else {
@@ -58,8 +65,12 @@ function myCtrl($scope, Chose) {
 
 	$scope.results = function(content, completed) {
 		if (completed && content.length > 0) {
-			$scope.response = content;
+			$scope.showLoader = false; // hide loading spinner
+			alert('Votre objet a bien été reçut ! \nVous receverez un email lorsqu\'il sera validé.');	
+			$scope.response = content;    
 			$scope.chose = {};
+			location.reload();
+		} else {
 		}
 	};
 }

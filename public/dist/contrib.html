@@ -119,7 +119,7 @@
                             Le descriptif de votre objet doit au moins contenir 10 caractères.
                         </small>
                         <small class="error" ng-show="chose_form.content.$error.maxlength">
-                            Le descriptif de votre objet doit au plus contenir 300 caractères.
+                            Le descriptif de votre objet doit au plus contenir 450 caractères.
                         </small>
                     </div>
                     <textarea placeholder="Descriptif de votre objet"
@@ -127,7 +127,7 @@
                               class="form-control"
                               ng-model="chose.content"
                               ng-minlength=10
-                              ng-maxlength=300 
+                              ng-maxlength=450 
                               rows=6 required />
                     </textarea>
                 </div>
@@ -145,12 +145,12 @@
                            valid-file 
                            onchange="angular.element(this).scope().fileChanged()"/>
                 </div>
-                <small class="sucess" ng-show="isFileChanged()">
+                <!-- <small class="sucess" ng-show="isFileChanged()">
                             OK
                 </small>
                 <small class="error" ng-show="!isFileChanged()">
                 Image requise
-                </small>
+                </small> -->
                 <!-- /Image -->
                 
                 <div class="alert alert-info">Server Response: {{response}} </div>
@@ -168,15 +168,20 @@
                 </div>
                 <!-- /CAPTCHA -->
                 
-                <input type="submit" ng-disabled="valideForm()" upload-submit="results(content, completed)" value="Submit" class="button radius">
+                <input type="submit" ng-click="showLoader = !showLoader" ng-disabled="valideForm()" upload-submit="results(content, completed)" value="Submit" class="button radius">
             </fieldset>
+            <div class="loader-container" ng-show="showLoader">
+                <div id="spinner"  class="loader"></div>
+                <p class="loader-msg">Merci de patienter...</p>
+                <!-- <img src="./assets/images/loader.gif"/> -->
+            </div>
         </form>
             
         </div>    
         </div>
 
 
-        <div ng-controller="listCtrl">
+        <div ng-controller="listCtrl" id="listr" ng-init="count=10">
         <div ng-repeat="chose in choses | orderBy:'date':true | limitTo:count" class="choses">
           <section class="inner">
                 <div class="row container-chose">
@@ -190,7 +195,7 @@
                 </div>
           </section>
           </div>
-          <div class="container">
+          <!-- <div class="container">
             <div class="row">
                <button ng-click="count = count + 10" ng-init="count=10" style="
                width: 100px;
@@ -204,11 +209,12 @@
                 +
                 </button>
             </div>
-          </div>
+          </div> -->
         </div>
         
         <div id="scroll-top">^</div>
 </div>
+        <script src="./assets/vendor/spin.js.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="assets/vendor/jquery.min.js"><\/script>')</script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
@@ -216,5 +222,19 @@
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js"></script>
         <script src="./assets/vendor/ngUpload.js"></script>
         <script src="./assets/js/main.js"></script>
+
+        <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+              // count = count + 10;
+              var scope = angular.element($("#listr")).scope();
+              scope.$apply(function(){
+                scope.count = scope.count + 10;
+              });
+            }
+          });
+        });
+        </script>
     </body>
 </html>

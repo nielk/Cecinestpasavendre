@@ -52,30 +52,63 @@ var insertChose = function (req, res) {
 
 	// the image uploaded
 	var fileImage = req.files.image;
-	// generate a hash for image name
-	var hash = crypto.createHash('md5').update(fileImage.path).digest('hex');
-	// get the extension of image uploaded
-	var ext = path.extname(fileImage.path).toLowerCase();
-	// new hashed image name
-	var imageName = hash + ext;
-		// new path of the uploaded image
-	var newPath = __dirname + '/uploads/' + imageName;
 
-	// move the uploaded image from temp to uploads directory
-	fs.readFile(fileImage.path, function (err, data) {
-		fs.writeFile(newPath, data, function (err) {
-			if (err) {
-				res.send('error : '+err , 500);
-			} else {
-			// minify the new image in uploads directory
-				minify(newPath, function (err) {
-					if(err) {
-						res.send('error : minification failed...\n'+err , 500);
-					}
-				});
-			}
+	// if an image is uploaded then...
+	if(req.files.image.name !== '') {
+		// generate a hash for image name
+		var hash = crypto.createHash('md5').update(fileImage.path).digest('hex');
+		// get the extension of image uploaded
+		var ext = path.extname(fileImage.path).toLowerCase();
+		// new hashed image name
+		var imageName = hash + ext;
+		// new path of the uploaded image
+		var newPath = __dirname + '/uploads/' + imageName;
+
+		// move the uploaded image from temp to uploads directory
+		fs.readFile(fileImage.path, function (err, data) {
+			fs.writeFile(newPath, data, function (err) {
+				if (err) {
+					res.send('error : '+ err , 500);
+				} else {
+				// minify the new image in uploads directory
+					minify(newPath, function (err) {
+						if(err) {
+							res.send('error : minification failed...\n'+err , 500);
+						}
+					});
+				}
+			});
 		});
-	});
+	} else {
+		// if no image is uploaded then we replace 
+		// it with a default img called none.jpg
+		imageName = "" + new Date();
+
+		// generate a hash for image name
+		var hash = crypto.createHash('md5').update(imageName).digest('hex');
+		// get the extension of image uploaded
+		var ext = path.extname(imageName).toLowerCase();
+		// new hashed image name
+		var imageName = hash + ext;
+		// new path of the uploaded image
+		var newPath = __dirname + '/uploads/' + imageName;
+
+		// move the uploaded image from temp to uploads directory
+		fs.readFile(__dirname + '/uploads/default.png', function (err, data) {
+			fs.writeFile(newPath, data, function (err) {
+				if (err) {
+					res.send('error : '+ err , 500);
+				} else {
+				// minify the new image in uploads directory
+		
+						if(err) {
+							res.send('error : something failed...\n'+err , 500);
+						}
+					
+				}
+			});
+		});
+	}
 
 	// check if inputs from formulaire are safe
 	if(validationInputs(req,res) === true) {
@@ -129,9 +162,12 @@ var insertChose = function (req, res) {
 						}
 
 						if(result.uploaded && result.moderator && result.contributor) {
-						res.send(result, 200);
+						// res.send(result, 200);
+						result.sucess = 'Image uploadé !';
+						res.send(result.sucess, 200);
 						} else {
-							res.send(result, 500);
+							result.fail = 'Une erreur c\'est produite, l\'image n\'a pas été uploadé';
+							res.send(result.fail, 500);
 						}
 					});
 				});
@@ -157,7 +193,7 @@ var validationInputs = function (req,res) {
 	req.assert('author', 'required').notEmpty().len(1,64);
 	req.assert('email', 'required').notEmpty().isEmail().len(5,40);
 	req.assert('title', 'required').notEmpty().len(1,30);
-	req.assert('content', 'required').notEmpty().len(10,300);
+	req.assert('content', 'required').notEmpty().len(10,450);
 	req.assert('image', 'required'); // toDO : validation image
 
 	// catch validation errors
@@ -194,11 +230,14 @@ var validationChose = function (req,res) {
 			if(err !== null || chose === null) {
 				res.send('error : \n'+err , 500);
 			} else {
-			res.send('<form method="post" action="/UpdateChose/'+imageName+'/'+pwd+'">'+
-					'<input type="text" name="author" value="'+chose.author+'">'+
-					'<input type="text" name="email" value="'+chose.email+'">'+
-					'<input type="text" name="title" value="'+chose.title+'">'+
-					'<input type="text" name="content" value="'+chose.content+'">'+
+			res.send('<style>body {background-color: #292927; color: white; font-family: Helvetica;} </style>'+
+					'<form method="post" action="/UpdateChose/'+imageName+'/'+pwd+'" style="text-align: center; width: 50%; margin: 0 auto;">'+
+					'<h1>Moderation</h1><br />'+
+					'Auteur : <input type="text" name="author" value="'+chose.author+'"><br /><br />'+
+					'Email : <input type="text" name="email" value="'+chose.email+'"><br /><br />'+
+					'Titre : <input type="text" name="title" value="'+chose.title+'"><br /><br />'+
+					// '<input type="text" name="content" value="'+chose.content+'"><br />'+
+					'Descriptif : <textarea placeholder="Descriptif de votre objet" name="content" rows=6 style="width: 100%"/>'+chose.content+'</textarea><br /><br />'+
 					'Supprimer : <input type="checkbox" name="deleted">'+
 					'<img src="../../uploads/'+chose.image+'">'+
 					'<input type="submit" value="Valider" onclick="" ></form>',200);
@@ -259,7 +298,7 @@ var updateChose = function(req,res) {
 					// save the new updated content of the chose
 					chose.save(function(err){
 
-						res.send('Objet validé !', 200);
+						res.send('Objet validé ! <a href="http://cecinestpasavendre.vlipp.fr">retour au site</a>', 200);
 
 						// send email to contributor to notify the new validated content
 						var msg = "Bonjour ! L'objet que vous avez posté sur <a href='http://cecinestpasavendre.vlipp.fr'>"+
@@ -269,8 +308,14 @@ var updateChose = function(req,res) {
 							subject = "Votre objet a été validé",
 							to = req.body.email;
 
-						mail(msg, subject, to, req, res);
+						mail(msg, subject, to, function(err, status) {
+						if(err) {
+							res.send(status, 500);
+						} else {
+							res.send(status, 200);
+						}
 
+						});
 					});
 				}
 			}
@@ -279,7 +324,6 @@ var updateChose = function(req,res) {
 		res.send('Permission refusé', 403);
 	}
 };
-
 module.exports.updateChose = updateChose;
 module.exports.validationChose = validationChose;
 module.exports.findAllChoses = findAllChoses;

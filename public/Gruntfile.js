@@ -150,7 +150,7 @@ module.exports = function(grunt) {
             tasks: ['sass','copy:cssDev']
           },
           js: {
-            files: ['<%= src.path %>/assets/js/*'],
+            files: ['<%= src.path %>/assets/js/*.js'],
             tasks: ['clean:js', 'concat:js']
           }
       },
