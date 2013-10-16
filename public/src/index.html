@@ -9,14 +9,18 @@
     document.location.href="http://www.mozilla.org/fr/firefox/features/";
   </script>
 <![endif]-->
-
+<!--[if IE 9]> 
+  <script>
+    alert("Ce site internet nécessite une version d'Internet Explorer supérieur ou égale à 10.0. Nous vous conseillons d'utiliser firefox pour une meilleur navigation web.");
+  </script> 
+  <![endif]-->
 <html lang="fr">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Nantes Nord Webdoc // Ceci n'est pas à vendre</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Ceci n'est pas à vendre est un web documentaire sur les quartiers de nantes nord et ses habitants. Cette année nous découvrons des habitants de nantes nord via un objet qui leur est cher." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
     <% if (grunt.config.get('dev')) {%>
@@ -52,6 +56,25 @@
         <div class="modal-propos">
           <h2>Vlipp.fr</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper nisl id lacus bibendum varius. Aenean vel augue lobortis, lobortis nunc vel, venenatis ante...</p>
+            <div id="hcard-Vlipp" class="vcard">
+             <span class="fn n">
+                <span class="given-name">Vlipp</span>
+              <span class="additional-name"></span>
+              <span class="family-name"></span>
+            </span>
+             <div class="org">Des idées pleins la prod'</div>
+             <a class="email" href="mailto:contact@vlipp.fr">contact@vlipp.fr</a>
+             <div class="adr">
+              <div class="street-address">Salorges 1</div>
+              <span class="locality">Nantes</span>
+            , 
+              <span class="postal-code">44100</span>
+
+              <span class="country-name">France</span>
+
+             </div>
+             <div class="tel">0606714352</div>
+            </div>
         </div>
       </div>
       <div class="modal-footer">
