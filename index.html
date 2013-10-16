@@ -9,10 +9,11 @@
     document.location.href="http://www.mozilla.org/fr/firefox/features/";
   </script>
 <![endif]-->
-<!--[if IE 9]> <script>
+<!--[if IE 9]> 
+  <script>
     alert("Ce site internet nécessite une version d'Internet Explorer supérieur ou égale à 10.0. Nous vous conseillons d'utiliser firefox pour une meilleur navigation web.");
-   
-  </script> <![endif]-->
+  </script> 
+  <![endif]-->
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
@@ -22,16 +23,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-    
-      <link rel="stylesheet" href="assets/css/video-js.css">
-    
-    
 
     
       <link rel="stylesheet" href="assets/css/main.css">
     
     
 
+    <link href="//vjs.zencdn.net/4.1/video-js.css" rel="stylesheet">
     <script type="text/javascript" src="./assets/vendor/prefix-free.js"></script>
   </head>
 <body>
@@ -371,16 +369,18 @@
       <li class="slide-02">
         <div class="row">
           <div class="col-md-12">
-            <video id="video-player-01" class="video-js vjs-default-skin video-center"
-                controls preload="auto" width="auto" height="auto"
-                poster="http://video-js.zencoder.com/oceans-clip.png"
-                data-setup='{"example_option":true}'>
-               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
-               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
-               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+          <div class="container-video">
+            <video id="video-player-01" class="video-js vjs-default-skin"
+              controls preload="auto" width="auto" height="auto"
+              poster="http://video-js.zencoder.com/oceans-clip.png"
+              data-setup='{"example_option":true}'>
+             <source src="assets/videos/01.mp4" type='video/mp4' />
+             <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+             <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
             </video>
             <button type="button" class="btn-circle center">retour</button>
           </div>
+        </div>
         </div>
         <div class="row center">
 
@@ -411,15 +411,17 @@
       <li class="slide-02">
         <div class="row">
           <div class="col-md-12">
-            <video id="video-player-02" class="video-js vjs-default-skin video-center"
-                controls preload="auto" width="auto" height="auto"
-                poster="http://video-js.zencoder.com/oceans-clip.png"
-                data-setup='{"example_option":true}'>
-               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
-               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
-               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            <div class="container-video">
+            <video id="video-player-02" class="video-js vjs-default-skin"
+              controls preload="auto" width="auto" height="auto"
+              poster="http://video-js.zencoder.com/oceans-clip.png"
+              data-setup='{"example_option":true}'>
+             <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+             <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+             <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
             </video>
             <button type="button" class="btn-circle center">retour</button>
+          </div>
           </div>
         </div>
         <div class="row center">
@@ -450,15 +452,17 @@
       <li class="slide-02">
         <div class="row">
           <div class="col-md-12">
-            <video id="video-player-03" class="video-js vjs-default-skin video-center"
-                controls preload="auto" width="auto" height="auto"
-                poster="http://video-js.zencoder.com/oceans-clip.png"
-                data-setup='{"example_option":true}'>
-               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
-               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
-               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            <div class="container-video">
+            <video id="video-player-03" class="video-js vjs-default-skin"
+              controls preload="auto" width="auto" height="auto"
+              poster="http://video-js.zencoder.com/oceans-clip.png"
+              data-setup='{"example_option":true}'>
+             <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+             <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+             <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
             </video>
             <button type="button" class="btn-circle center">retour</button>
+          </div>
           </div>
         </div>
         <div class="row center">
@@ -490,15 +494,17 @@
       <li class="slide-02">
         <div class="row">
           <div class="col-md-12">
-            <video id="video-player-04" class="video-js vjs-default-skin video-center"
-                controls preload="auto" width="auto" height="auto"
-                poster="http://video-js.zencoder.com/oceans-clip.png"
-                data-setup='{"example_option":true}'>
-               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
-               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
-               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            <div class="container-video">
+            <video id="video-player-04" class="video-js vjs-default-skin"
+              controls preload="auto" width="auto" height="auto"
+              poster="http://video-js.zencoder.com/oceans-clip.png"
+              data-setup='{"example_option":true}'>
+             <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+             <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+             <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
             </video>
             <button type="button" class="btn-circle center">retour</button>
+          </div>
           </div>
         </div>
         <div class="row center">
@@ -529,15 +535,17 @@
       <li class="slide-02">
         <div class="row">
           <div class="col-md-12">
-            <video id="video-player-05" class="video-js vjs-default-skin video-center"
-                controls preload="auto" width="auto" height="auto"
-                poster="http://video-js.zencoder.com/oceans-clip.png"
-                data-setup='{"example_option":true}'>
-               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
-               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
-               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            <div class="container-video">
+            <video id="video-player-05" class="video-js vjs-default-skin"
+              controls preload="auto" width="auto" height="auto"
+              poster="http://video-js.zencoder.com/oceans-clip.png"
+              data-setup='{"example_option":true}'>
+             <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+             <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+             <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
             </video>
             <button type="button" class="btn-circle center">retour</button>
+          </div>
           </div>
         </div>
         <div class="row center">
@@ -569,15 +577,17 @@
       <li class="slide-02">
         <div class="row">
           <div class="col-md-12">
-            <video id="video-player-06" class="video-js vjs-default-skin video-center"
-                controls preload="auto" width="auto" height="auto"
-                poster="http://video-js.zencoder.com/oceans-clip.png"
-                data-setup='{"example_option":true}'>
-               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
-               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
-               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            <div class="container-video">
+            <video id="video-player-06" class="video-js vjs-default-skin"
+              controls preload="auto" width="auto" height="auto"
+              poster="http://video-js.zencoder.com/oceans-clip.png"
+              data-setup='{"example_option":true}'>
+             <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+             <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+             <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
             </video>
             <button type="button" class="btn-circle center">retour</button>
+          </div>
           </div>
         </div>
         <div class="row center">
@@ -608,15 +618,17 @@
       <li class="slide-02">
         <div class="row">
           <div class="col-md-12">
-            <video id="video-player-07" class="video-js vjs-default-skin video-center"
-                controls preload="auto" width="auto" height="auto"
-                poster="http://video-js.zencoder.com/oceans-clip.png"
-                data-setup='{"example_option":true}'>
-               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
-               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
-               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            <div class="container-video">
+            <video id="video-player-07" class="video-js vjs-default-skin"
+              controls preload="auto" width="auto" height="auto"
+              poster="http://video-js.zencoder.com/oceans-clip.png"
+              data-setup='{"example_option":true}'>
+             <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+             <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+             <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
             </video>
             <button type="button" class="btn-circle center">retour</button>
+          </div>
           </div>
         </div>
         <div class="row center">
@@ -648,15 +660,17 @@
       <li class="slide-02">
         <div class="row">
           <div class="col-md-12">
-            <video id="video-player-08" class="video-js vjs-default-skin video-center"
-                controls preload="auto" width="auto" height="auto"
-                poster="http://video-js.zencoder.com/oceans-clip.png"
-                data-setup='{"example_option":true}'>
-               <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
-               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
-               <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            <div class="container-video">
+            <video id="video-player-08" class="video-js vjs-default-skin"
+              controls preload="auto" width="auto" height="auto"
+              poster="http://video-js.zencoder.com/oceans-clip.png"
+              data-setup='{"example_option":true}'>
+             <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+             <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+             <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
             </video>
             <button type="button" class="btn-circle center">retour</button>
+          </div>
           </div>
         </div>
         <div class="row center">
@@ -719,10 +733,11 @@
 <script src="./assets/vendor/spin.js.js"></script>
 <script src="assets/vendor/modernizr.js"></script>
 <script src="assets/vendor/bootstrap.min.js"></script>
-<script src="assets/vendor/video.js.js"></script>
 <script src="assets/vendor/angular.js"></script>
 <script src="assets/vendor/angular-resource.js"></script>
 <script src="assets/vendor/ngUpload.js"></script>
+<script src="//vjs.zencdn.net/4.1/video.js"></script>
+
 
 
   <script src="assets/js/main.js"></script>
