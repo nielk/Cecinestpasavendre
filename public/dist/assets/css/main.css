@@ -332,14 +332,29 @@ section {
 
 }*/
 .video-js {
-  /*padding-top: 36.25%;*/
-  padding-top: 40.25%; }
-
-.vjs-fullscreen {
-  padding-top: 0px; }
-
-#video-player {
-  z-index: 3000; }
+  margin: 0 auto;
+  width: 300px;
+  height: 123px; }
+  @media screen and (min-width: 480px) {
+    .video-js {
+      width: 400px;
+      height: 165px; } }
+  @media screen and (min-width: 580px) {
+    .video-js {
+      width: 500px;
+      height: 206px; } }
+  @media screen and (min-width: 920px) {
+    .video-js {
+      width: 600px;
+      height: 247px; } }
+  @media screen and (min-width: 1024px) {
+    .video-js {
+      width: 700px;
+      height: 289px; } }
+  @media screen and (min-width: 1200px) {
+    .video-js {
+      width: 800px;
+      height: 330px; } }
 
 .fullscreen-ie {
   display: none; }
