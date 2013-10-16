@@ -304,16 +304,42 @@
 // ===========================================================
 
 .video-js {
-	/*padding-top: 36.25%;*/
-	padding-top: 40.25%;
-}
-.vjs-fullscreen {
-	padding-top: 0px;
+	margin: 0 auto;
+	width: 300px;
+	height: 123px;
+	@media screen and (min-width: 480px) {
+		width: 400px;
+		height: 165px;
+	}
+	@media screen and (min-width: 580px) {
+		width: 500px;
+		height: 206px;
+	}
+	@media screen and (min-width: 920px) {
+		width: 600px;
+		height: 247px;
+	}
+	@media screen and (min-width: 1024px) {
+		width: 700px;
+		height: 289px;
+	}
+	@media screen and (min-width: 1200px) {
+		width: 800px;
+		height: 330px;
+	}
 }
 
-#video-player {
-	z-index: 3000;
-}
+// .video-js {
+// 	/*padding-top: 36.25%;*/
+// 	padding-top: 40.25%;
+// }
+// .vjs-fullscreen {
+// 	padding-top: 0px;
+// }
+
+// #video-player {
+// 	z-index: 3000;
+// }
 
 // ===========================================================
 // Some stuff..

@@ -10,6 +10,7 @@ module.exports = function(grunt) {
       css: '<%= src.assets %>/styles',
       fonts: '<%= src.assets %>/fonts',
       images: '<%= src.assets %>/images',
+      videos: '<%= src.assets %>/videos',
     },
 
     components: {
@@ -49,6 +50,7 @@ module.exports = function(grunt) {
         vendor: '<%= distDir.assets %>/vendor',
         fonts: '<%= distDir.assets %>/fonts',
         images: '<%= distDir.assets %>/images',
+        videos: '<%= distDir.assets %>/videos',
         css: '<%= distDir.assets %>/css',
         js: '<%= distDir.assets %>/js'
       },
@@ -95,6 +97,12 @@ module.exports = function(grunt) {
           cwd: '<%= src.images %>',
           src: ['*.*'],
           dest: '<%= distDir.images %>'
+        },
+        video: {
+          expand: true,
+          cwd: '<%= src.videos %>',
+          src: ['*.*'],
+          dest: '<%= distDir.videos %>'
         },
         imgUpload: {
           expand: true,
