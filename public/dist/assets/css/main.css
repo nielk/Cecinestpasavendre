@@ -735,50 +735,46 @@ footer {
   width: 130px;
   height: 35px; }
 
+/* alex slider */
+.container-slide {
+  position: relative;
+  width: 90%;
+  height: 400px;
+  overflow: hidden;
+  margin: 100px auto 0px; }
+
+.slide {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  top: 0px;
+  left: 0px; }
+
+.slide:nth-child(1) {
+  background-color: red; }
+
+.slide:nth-child(2) {
+  background-color: blue;
+  color: white; }
+
+/* /alex slide */
 /* Slide animation */
 /* contient les deux sections et garde la fenêtre à la bonne taille */
 section {
   width: 100%;
   z-index: 1005;
   overflow: hidden; }
-  section .slide {
-    width: 200%;
+  section li {
+    display: table;
     height: 100%;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    transition: all 800ms ease-in-out; }
-    section .slide li {
-      display: table;
-      height: 100%;
-      width: 50%;
-      float: left; }
-      section .slide li .row {
-        display: table-cell;
-        vertical-align: middle;
-        width: 100%; }
-        section .slide li .row video {
-          opacity: 1; }
-
-.slide-02 {
-  opacity: 0;
-  transition: all 0.5s; }
-
-.csstransforms3d .slided {
-  transform: translate3d(-50%, 0, 0);
-  transition: all 800ms ease-in-out; }
-  .csstransforms3d .slided .slide-01 {
-    opacity: 0;
-    transition: all 0.5s; }
-  .csstransforms3d .slided .slide-02 {
-    opacity: 1;
-    transition: all 0.5s; }
-
-.no-csstransforms3d .slide {
-  position: absolute;
-  left: 0; }
-  .no-csstransforms3d .slide.slided {
-    left: -100%; }
+    width: 50%;
+    float: left; }
+    section li .row {
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%; }
+      section li .row video {
+        opacity: 1; }
 
 /* FIN Slide animation */
 /* page contribution styles */
