@@ -778,7 +778,13 @@ footer {
   margin-top: 24%; }
 
 .slide:nth-child(2) {
-  margin-top: 13%; }
+  margin-top: 43%; }
+  @media screen and (orientation: landscape) {
+    .slide:nth-child(2) {
+      margin-top: 23%; } }
+  @media screen and (min-width: 720px) {
+    .slide:nth-child(2) {
+      margin-top: 13%; } }
 
 .fix-slide {
   margin-top: 24% !important; }
