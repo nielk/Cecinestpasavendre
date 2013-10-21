@@ -160,16 +160,17 @@ $(document).ready(function() {
 $(document).ready(function(){
   var $slides	= $(".slide");
   
-  TweenLite.set($slides.filter(":gt(0)"), {left:"100%"});	
+  TweenLite.set($slides.filter(":odd"), {left:"100%"});	
     
-  $(".slide:nth-child(1)").on("click", function() {
-    TweenLite.to(".slide:nth-child(1)", 1, {left:"-100%"});
-    TweenLite.to(".slide:nth-child(2)", 1, {left:"0px"});
+  $(".slide:nth-child(odd)").on("click", function() {
+    var thisSlide = $(this).closest('.slide');
+    TweenLite.to(thisSlide, 1, {left:"-100%"});
+    TweenLite.to(thisSlide.next(), 1, {left:"0px"});
   });
   
-  $(".slide:nth-child(2)").on("click", function() {
-    TweenLite.to(".slide:nth-child(2)", 1, {left:"100%"});
-    TweenLite.to(".slide:nth-child(1)", 1, {left:"0px"});
+  $(".slide:nth-child(even)").on("click", function() {
+    var thisSlide = $(this).closest('.slide');
+    TweenLite.to(thisSlide, 1, {left:"100%"});
+    TweenLite.to(thisSlide.prev(), 1, {left:"0px"});
   });
-});
-;
+});;
