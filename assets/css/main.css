@@ -454,7 +454,7 @@ body {
       width: 20px; } }
 @media screen and (orientation: landscape) and (max-width: 720px) {
   #container-nav {
-    height: 150%; }
+    height: 90%; }
     #container-nav .picto-min {
       width: 20px; } }
 @media screen and (orientation: portrait) {
