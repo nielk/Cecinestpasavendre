@@ -90,9 +90,17 @@
 	// }
 				
 	.slide:nth-child(2){
-		margin-top: 13%;
+		margin-top: 43%;
 		// background-color: blue;
 		// color: white;
+
+		@media screen and (orientation: landscape) {
+			margin-top: 23%;
+		}
+
+		@media screen and (min-width: 720px) {
+			margin-top: 13%;
+		}
 	}
 
 	.fix-slide {
