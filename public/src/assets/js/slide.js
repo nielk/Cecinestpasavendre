@@ -30,14 +30,22 @@ $(document).ready(function(){
   //   TweenLite.to(thisSlide.prev(), 1, {left:"0px"});
   // });
 
-$(".slide-button").on("click", function() {
+$(".slideButton-illus, .slideButton").on("click", function() {
     var thisSlide = $(this).parent().parent().parent('.slide');
+    thisSlide.next().addClass('slide-show');
+    console.log(thisSlide);
     TweenLite.to(thisSlide, 1, {left:"-100%"});
     TweenLite.to(thisSlide.next(), 1, {left:"0px"});
   });
   
-  $(".slide-button").on("click", function() {
+  $(".slide-button-2").on("click", function() {
     var thisSlide = $(this).parent().parent().parent('.slide');
+    TweenLite.to(thisSlide, 1, {left:"100%"});
+    TweenLite.to(thisSlide.prev(), 1, {left:"0px"});
+  });
+
+  $("button[type=button]").on("click", function() {
+    var thisSlide = $(this).parent().parent().parent().parent('.slide');
     TweenLite.to(thisSlide, 1, {left:"100%"});
     TweenLite.to(thisSlide.prev(), 1, {left:"0px"});
   });

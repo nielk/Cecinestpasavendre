@@ -29,8 +29,8 @@
                 
                 <!-- Author -->
                 <div class="form-group">
-                    <label for="author">Votre nom</label>
-                    <div class="error"
+                    <label for="author">Votre nom <span class="requis">*</span></label>
+                    <div 
                          ng-show="chose_form.author.$dirty && chose_form.author.$invalid">
                         <small class="error" ng-show="chose_form.author.$error.required">
                             Vous devez entrer votre nom.
@@ -55,8 +55,8 @@
                 
                 <!-- Email -->
                 <div class="form-group">
-                    <label for="email">Votre email</label>
-                    <div class="error"
+                    <label for="email">Votre email <span class="requis">*</span></label>
+                    <div 
                          ng-show="chose_form.email.$dirty && chose_form.email.$invalid">
                         <small class="error" ng-show="chose_form.email.$error.required">
                             Vous devez entrer votre email.
@@ -84,8 +84,8 @@
                 
                 <!-- Title -->
                 <div class="form-group">
-                <label>Le nom de votre objet</label>
-                    <div class="error"
+                <label>Le nom de votre objet <span class="requis">*</span></label>
+                    <div
                          ng-show="chose_form.title.$dirty && chose_form.title.$invalid">
                         <small class="error" ng-show="chose_form.title.$error.required">
                             Vous devez entrer le nom de votre objet.
@@ -109,8 +109,8 @@
                     
                     <!-- Content -->
                 <div class="form-group">
-                    <label>La description de votre objet | 300 caractères maximum</label>
-                    <div class="error"
+                    <label>La description de votre objet <span class="requis">*</span> | 300 caractères maximum</label>
+                    <div 
                          ng-show="chose_form.content.$dirty && chose_form.content.$invalid">
                         <small class="error" ng-show="chose_form.content.$error.required">
                             Vous devez entrer un descriptif de votre objet.
@@ -127,7 +127,7 @@
                               class="form-control"
                               ng-model="chose.content"
                               ng-minlength=10
-                              ng-maxlength=450 
+                              ng-maxlength=300 
                               rows=6 required />
                     </textarea>
                 </div>
@@ -135,7 +135,7 @@
                 
                 <!-- Image -->
                 <div class="form-group">
-                    <label>L'image de votre objet | 10 Mo maximum - format JPEG ou PNG</label>
+                    <label>L'image de votre objet (<span class="requis">optionnel</span>) | 10 Mo maximum - format JPEG ou PNG</label>
                     <input type="file" 
                            placeholder="L'image de votre objet"
                            name="image"
@@ -157,7 +157,7 @@
 
                 <!-- CAPTCHA -->
                 <div class="form-group">
-                  <label>Combien font {{number[num01]}} plus {{number[num02]}} ?</label>
+                  <label>Combien font {{number[num01]}} plus {{number[num02]}} ? <span class="requis">*</span></label>
                   <input type="text" name="captcha" ng-model="answer" value="" />
                   <small class="error" ng-show="!ok() && chose_form.captcha.$dirty">
                   Incorrect !
@@ -168,7 +168,7 @@
                 </div>
                 <!-- /CAPTCHA -->
                 
-                <input type="submit" ng-click="showLoader = !showLoader" ng-disabled="valideForm()" upload-submit="results(content, completed)" value="Soumettre" class="button radius">
+                <input type="submit" ng-click="showLoader = !showLoader" ng-show="!valideForm()" ng-disabled="valideForm()" upload-submit="results(content, completed)" value="Soumettre" class="btn-contrib">
             </fieldset>
             <div class="loader-container" ng-show="showLoader">
                 <div id="spinner"  class="loader"></div>
@@ -183,7 +183,7 @@
         <div id="description-contrib">
           <div class="row">
             <div class="col-md-offset-3 col-md-6">
-              <h2>Ajouter son objet</h2>
+              <h2>Vos objets !</h2>
               <p>
                   Et vous ? Si vous deviez choisir un objet auquel vous tenez particulièrement, quel serait-il et que dirait-il de vous ? Contribuez au projet en postant <a href=""><em><u>votre objet</u></em></a> sur la plateforme participative du webdocumentaire ! Dis-moi ton objet, je te dirai qui tu es !
               </p>

@@ -79,6 +79,19 @@ nav ul li {
                         margin-bottom: -15px;
                 }
         }
+    @media screen and (min-width: 1700px) {
+        margin-top: 26px;
+        img {
+            height: 100px !important;
+        }
+        &:hover {
+                transition: all 0.5s;
+                margin-top: 1.5%;
+        }
+        a {
+
+        }
+    }
 }
 
 .nav-header {
@@ -116,6 +129,10 @@ nav ul li {
         }
         img[id*="picto"] {
                 width: 70px;
+                @media screen and (min-width: 1600px) {
+                    height: 70px !important;
+                    margin-top: 10px;
+                }
         }
         #logo {
                 margin-top: 5px;
@@ -123,6 +140,9 @@ nav ul li {
         #vlipp-logo {
                 width: 6%;
                 margin-top: 1%;
+                @media screen and (min-width: 1600px) {
+                    margin-top: 0;
+                }
         }
 }
 
