@@ -887,9 +887,10 @@ form {
       height: 200px; } }
 
 .odd {
-  display: inline-block;
   margin: 0 10px;
   border: 1px solid #fff;
+  display: inline-block;
+  vertical-align: middle;
   text-align: left;
   float: center;
   max-width: 350px;
@@ -897,12 +898,14 @@ form {
   @media screen and (min-width: 768px) {
     .odd {
       max-width: 500px;
+      float: left;
       min-width: 200px; } }
 
 .even {
-  display: inline-block;
   margin: 0 10px;
   border: 1px solid #fff;
+  display: inline-block;
+  vertical-align: middle;
   text-align: left;
   float: center;
   max-width: 350px;
@@ -910,17 +913,16 @@ form {
   @media screen and (min-width: 768px) {
     .even {
       max-width: 500px;
+      float: right;
       min-width: 200px; } }
 
 .container-chose {
   text-align: center;
-  margin: 0 auto;
   margin-bottom: 4%; }
   @media screen and (min-width: 1024px) {
     .container-chose {
       width: 80%;
-      margin-left: 10%;
-      margin-top: 7%; } }
+      margin-left: 10%; } }
 
 /* #C9BD9D", "#BD4B57", "#403859", "#A63A59", "#92C0A9", "#C68847", "#DDBF74", "#365B63" */
 .choses:nth-child(1) {
