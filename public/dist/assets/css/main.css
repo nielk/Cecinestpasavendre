@@ -28,6 +28,9 @@ a {
     text-decoration: none;
     transition: all 0.5s; }
 
+footer h3 {
+  font-size: 1.7em; }
+
 .requis {
   color: red; }
 
@@ -716,8 +719,7 @@ footer {
     footer .footer-list li {
       list-style: none; }
   footer #vlipp-footer {
-    width: 110px;
-    float: right; }
+    width: 110px; }
   footer a {
     color: #292927; }
 
@@ -819,6 +821,11 @@ section {
   overflow: hidden; }
 
 /* FIN Slide animation */
+footer .list-inline {
+  text-align: center; }
+  footer .list-inline li {
+    margin: 2% 4%; }
+
 /* page contribution styles */
 .error {
   background-color: white;
@@ -864,7 +871,10 @@ form {
       position: absolute; } }
 
 #description-contrib {
-  margin-top: 20%; }
+  margin-top: 30%; }
+  @media screen and (min-width: 480px) {
+    #description-contrib {
+      margin-top: 20%; } }
   @media screen and (min-width: 1080px) {
     #description-contrib {
       margin-top: 15%; } }

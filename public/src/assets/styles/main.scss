@@ -30,6 +30,14 @@
 @import "colors", "typo", "layout", "navigation", "slider";
 
 
+footer .list-inline {
+	text-align: center;
+
+	li {
+		margin: 2% 4%;
+	}
+}
+
 /* page contribution styles */
 
 .error {
@@ -88,7 +96,10 @@ form {
 }
 
 #description-contrib {
-	margin-top: 20%;
+	margin-top: 30%;
+	@media screen and (min-width: 480px) {
+		margin-top: 20%;
+	}
 	@media screen and (min-width: 1080px) {
 		margin-top: 15%;
 	}
