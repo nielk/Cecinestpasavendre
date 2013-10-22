@@ -143,42 +143,40 @@ form {
 }
 
 .odd {
+  display: inline-block;
   margin: 0 10px;
   border: 1px solid #fff;
-  display: inline-block;
-  vertical-align: middle;
   text-align: left;
   float: center;
   	max-width: 350px;
   	min-width: 200px;
   @media screen and (min-width: 768px) {
   	max-width: 500px;
-  	float: left;
   	min-width: 200px;
   }
 }
 
 .even {
+  display: inline-block;
   margin: 0 10px;
   border: 1px solid #fff;
-  display: inline-block;
-  vertical-align: middle;
   text-align: left;
   float: center;
   	max-width: 350px;
   	min-width: 200px;
   @media screen and (min-width: 768px) {
   	max-width: 500px;
-  	float: right;
   	min-width: 200px;
   }
 }
 
 .container-chose {
 	text-align: center;
+	margin: 0 auto;
 	@media screen and (min-width: 1024px) {
   	  width: 80%;
   	  margin-left: 10%;
+  	  margin-top: 7%;
   }
   margin-bottom: 4%;
 }
