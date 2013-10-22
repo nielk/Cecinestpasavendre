@@ -18,14 +18,26 @@ $(document).ready(function(){
   
   TweenLite.set($slides.filter(":odd"), {left:"100%"});	
     
-  $(".slide:nth-child(odd)").on("click", function() {
-    var thisSlide = $(this).closest('.slide');
+  // $(".slide:nth-child(odd)").on("click", function() {
+  //   var thisSlide = $(this).closest('.slide');
+  //   TweenLite.to(thisSlide, 1, {left:"-100%"});
+  //   TweenLite.to(thisSlide.next(), 1, {left:"0px"});
+  // });
+  
+  // $(".slide:nth-child(even)").on("click", function() {
+  //   var thisSlide = $(this).closest('.slide');
+  //   TweenLite.to(thisSlide, 1, {left:"100%"});
+  //   TweenLite.to(thisSlide.prev(), 1, {left:"0px"});
+  // });
+
+$(".slide-button").on("click", function() {
+    var thisSlide = $(this).parent().parent().parent('.slide');
     TweenLite.to(thisSlide, 1, {left:"-100%"});
     TweenLite.to(thisSlide.next(), 1, {left:"0px"});
   });
   
-  $(".slide:nth-child(even)").on("click", function() {
-    var thisSlide = $(this).closest('.slide');
+  $(".slide-button").on("click", function() {
+    var thisSlide = $(this).parent().parent().parent('.slide');
     TweenLite.to(thisSlide, 1, {left:"100%"});
     TweenLite.to(thisSlide.prev(), 1, {left:"0px"});
   });

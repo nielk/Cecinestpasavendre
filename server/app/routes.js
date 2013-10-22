@@ -135,9 +135,7 @@ var insertChose = function (req, res) {
 				};
 
 				// send an email to the contributor
-				var msg = "Bonjour ! L'objet que vous venez de poster sur <a href='http://cecinestpasavendre.vlipp.fr'>" +
-					"http://cecinestpasavendre.vlipp.fr</a> est en cours de validation. Vous receverez" +
-					" un email lorsqu'il sera validé.";
+				var msg = "Votre objet a bien été enregistré. Merci de votre participation ! Vous recevrez un e-mail lorsqu'il sera validé par la rédaction !";
 				var subject = "Votre objet est en cours de validation";
 				var to = req.body.email;
 
@@ -150,7 +148,7 @@ var insertChose = function (req, res) {
 
 					// send an email to the moderator
 					msg = "<b>Hello, un nouvel objet a été ajouté ! cliquer ici pour le valider : " +
-					"<a href=\"http://localhost:9999/valid/" + imageName + "/" + password + "\">cliquer</a></b>";
+					"<a href=\"http://cecinestpasavendre.vlipp.fr/valid/" + imageName + "/" + password + "\">cliquer</a></b>";
 					subject = "Nouveau contenu à valider";
 					to = moderator;
 
