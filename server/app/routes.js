@@ -191,7 +191,7 @@ var validationInputs = function (req,res) {
 	req.assert('author', 'required').notEmpty().len(1,64);
 	req.assert('email', 'required').notEmpty().isEmail().len(5,40);
 	req.assert('title', 'required').notEmpty().len(1,30);
-	req.assert('content', 'required').notEmpty().len(10,450);
+	req.assert('content', 'required').notEmpty().len(10,300);
 	req.assert('image', 'required'); // toDO : validation image
 
 	// catch validation errors

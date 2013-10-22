@@ -46,31 +46,30 @@
 
 	#propos {
 		margin-top: -15%;
-		height: 600px;
+		height: 100%;
 
-		@media screen and (min-width: 380px) {
-			margin-top: 0;
-			height: 600px;
-		}
+		// @media screen and (min-width: 380px) {
+		// 	margin-top: 0;
+		// 	height: 600px;
+		// }
 
-		@media screen and (min-width: 720px) {
-			margin-top: -13%;
-			height: 600px;
-		}
+		// @media screen and (min-width: 720px) {
+		// 	margin-top: -13%;
+		// 	height: 600px;
+		// }
 
-		@media screen and (orientation: portrait) and (min-width: 720px) {
-			margin-top: -34%;
-			height: 600px;
-		}
+		// @media screen and (orientation: portrait) and (min-width: 720px) {
+		// 	margin-top: -34%;
+		// 	height: 600px;
+		// }
 
-		@media screen and (min-width: 960px) {
-			margin-top: -12%;
-			height: 600px;
-		}
+		// @media screen and (min-width: 960px) {
+		// 	margin-top: -12%;
+		// 	height: 600px;
+		// }
 
-		@media screen and (min-width: 1280px) {
-			margin-top: -11%;
-			height: 600px;
+		@media screen and (min-width: 1680px) {
+			margin-top: -7%;
 		}
 	}
 
@@ -96,6 +95,7 @@
 			background-color: #365B63;
 			background-image: linear-gradient(128deg, #365B63 70%, rgba(64, 56, 89, 0) 70%), url('../images/bgsection-00.png');
 			background-position: 0% 10%;
+			background-size: cover;
 			color: $font-color !important;
 			
 		}
@@ -202,6 +202,13 @@
 	margin-right: auto;
 	width: 70px;
 	height: 70px;
+}
+
+.btn-contrib {
+	border-radius: 9px;
+	height: 30px;
+	border: 0;
+	color: black;
 }
 
 /* test */
@@ -457,4 +464,11 @@ html, body {
 body {
 	font-family: $font;
 	color: $font-color;
+}
+
+p {
+	font-size: 0.8em;
+	@media screen and (min-width: 380px) {
+		font-size: 1em;
+	}
 }

@@ -28,6 +28,9 @@ a {
     text-decoration: none;
     transition: all 0.5s; }
 
+.requis {
+  color: red; }
+
 /*$color: "#403859", "#91BFA8", "#E6C77D", "#BD4B56", "#365B63", "#C8BC9C", "#C58747", "#A53959";*/
 section:nth-child(3) {
   background-color: #C9BD9D;
@@ -127,27 +130,10 @@ section:nth-child(10) {
 
 #propos {
   margin-top: -15%;
-  height: 600px; }
-  @media screen and (min-width: 380px) {
+  height: 100%; }
+  @media screen and (min-width: 1680px) {
     #propos {
-      margin-top: 0;
-      height: 600px; } }
-  @media screen and (min-width: 720px) {
-    #propos {
-      margin-top: -13%;
-      height: 600px; } }
-  @media screen and (orientation: portrait) and (min-width: 720px) {
-    #propos {
-      margin-top: -34%;
-      height: 600px; } }
-  @media screen and (min-width: 960px) {
-    #propos {
-      margin-top: -12%;
-      height: 600px; } }
-  @media screen and (min-width: 1280px) {
-    #propos {
-      margin-top: -11%;
-      height: 600px; } }
+      margin-top: -7%; } }
 
 section {
   height: 100%;
@@ -162,6 +148,7 @@ section {
     background-color: #365B63;
     background-image: linear-gradient(128deg, #365b63 70%, rgba(64, 56, 89, 0) 70%), url("../images/bgsection-00.png");
     background-position: 0% 10%;
+    background-size: cover;
     color: #ebe8da !important; }
     @media screen and (orientation: landscape) {
       section:nth-child(2) {
@@ -247,6 +234,12 @@ section {
   margin-right: auto;
   width: 70px;
   height: 70px; }
+
+.btn-contrib {
+  border-radius: 9px;
+  height: 30px;
+  border: 0;
+  color: black; }
 
 /* test */
 .btn-circle-illus {
@@ -448,6 +441,12 @@ body {
   font-family: "Raleway", Verdana, sans-serif;
   color: #ebe8da; }
 
+p {
+  font-size: 0.8em; }
+  @media screen and (min-width: 380px) {
+    p {
+      font-size: 1em; } }
+
 @media screen and (orientation: landscape) {
   #container-nav {
     height: 100%; }
@@ -485,6 +484,14 @@ nav ul li {
     font-size: 0.8em; }
     nav ul li a img {
       margin-bottom: -15px; }
+  @media screen and (min-width: 1700px) {
+    nav ul li {
+      margin-top: 26px; }
+      nav ul li img {
+        height: 100px !important; }
+      nav ul li:hover {
+        transition: all 0.5s;
+        margin-top: 1.5%; } }
 
 .nav-header {
   width: 100%;
@@ -516,11 +523,18 @@ nav ul li {
     margin-top: -40px; }
   .nav-header-shrink img[id*="picto"] {
     width: 70px; }
+    @media screen and (min-width: 1600px) {
+      .nav-header-shrink img[id*="picto"] {
+        height: 70px !important;
+        margin-top: 10px; } }
   .nav-header-shrink #logo {
     margin-top: 5px; }
   .nav-header-shrink #vlipp-logo {
     width: 6%;
     margin-top: 1%; }
+    @media screen and (min-width: 1600px) {
+      .nav-header-shrink #vlipp-logo {
+        margin-top: 0; } }
 
 /* menu picto landscape & portrait */
 .nav-phone {
@@ -723,7 +737,7 @@ footer {
       max-width: 220px;*/
   cursor: pointer;
   z-index: 100;
-  padding: 33% 35% 35% 30%;
+  padding: 32% 49% 35% 30%;
   line-height: 14px;
   color: black; }
   @media screen and (min-width: 992px) {
@@ -772,14 +786,18 @@ footer {
   height: 100%;
   overflow: hidden; }
 
+.slide-show {
+  visibility: visible !important; }
+
 .slide {
   width: 100%;
   height: 100%;
   position: absolute;
-  margin-top: 24%; }
+  margin-top: 16%; }
 
 .slide:nth-child(2) {
-  margin-top: 43%; }
+  margin-top: 43%;
+  visibility: hidden; }
   @media screen and (orientation: landscape) {
     .slide:nth-child(2) {
       margin-top: 23%; } }
@@ -789,6 +807,9 @@ footer {
 
 .fix-slide {
   margin-top: 24% !important; }
+  @media screen and (min-width: 1200px) {
+    .fix-slide {
+      margin-top: 15% !important; } }
 
 /* /alex slide */
 /* Slide animation */
@@ -799,6 +820,11 @@ section {
 
 /* FIN Slide animation */
 /* page contribution styles */
+.error {
+  background-color: white;
+  color: red;
+  border: 2px solid red; }
+
 form {
   width: 70%;
   margin: 0 auto; }
