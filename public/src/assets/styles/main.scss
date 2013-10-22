@@ -85,6 +85,16 @@ form {
   background-image: linear-gradient(138deg, #f0edde 80%, #f0edde 80%, #ece8da 80%, #f0edde 100%);
 }
 
+#description-contrib {
+	margin-top: 20%;
+	@media screen and (min-width: 1080px) {
+		margin-top: 15%;
+	}
+	@media screen and (min-width: 1400px) {
+		margin-top: 10%;
+	}
+}
+
 #button-form-toggle {
   margin: 0 auto;
   width: 400px;
@@ -108,7 +118,7 @@ form {
 	}
 
 	@media screen and (min-width: 720px) {
-		font-size: 3em;
+		font-size: 2.8em;
 	}
 }
 

@@ -19,7 +19,7 @@
 
         <div id="menu-contrib">
           <div id="retour"><a href="./index.html">retour</a></div>
-          <div id="button-form-toggle">J'ajoute mon objet!</div>
+          <div id="button-form-toggle">J'ajoute mon objet !</div>
         </div>
 
         <div id="form-container">
@@ -168,7 +168,7 @@
                 </div>
                 <!-- /CAPTCHA -->
                 
-                <input type="submit" ng-click="showLoader = !showLoader" ng-disabled="valideForm()" upload-submit="results(content, completed)" value="Submit" class="button radius">
+                <input type="submit" ng-click="showLoader = !showLoader" ng-disabled="valideForm()" upload-submit="results(content, completed)" value="Soumettre" class="button radius">
             </fieldset>
             <div class="loader-container" ng-show="showLoader">
                 <div id="spinner"  class="loader"></div>
@@ -180,6 +180,16 @@
         </div>    
         </div>
 
+        <div id="description-contrib">
+          <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+              <h2>Ajouter son objet</h2>
+              <p>
+                  Et vous ? Si vous deviez choisir un objet auquel vous tenez particulièrement, quel serait-il et que dirait-il de vous ? Contribuez au projet en postant <a href=""><em><u>votre objet</u></em></a> sur la plateforme participative du webdocumentaire ! Dis-moi ton objet, je te dirai qui tu es !
+              </p>
+            </div>
+          </div>
+        </div>
 
         <div ng-controller="listCtrl" id="listr" ng-init="count=10">
         <div ng-repeat="chose in choses | orderBy:'date':true | limitTo:count" class="choses">
