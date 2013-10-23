@@ -354,28 +354,28 @@
 
 .video-js {
 	margin: 0 auto;
-	width: 300px;
-	height: 123px;
+	width: 250px;
+	height: 140px;
 	@media screen and (min-width: 480px) {
 		width: 400px;
-		height: 165px;
+		height: 225px;
 	}
 	@media screen and (min-width: 580px) {
 		width: 500px;
-		height: 206px;
+		height: 281px;
 	}
 	@media screen and (min-width: 920px) {
 		width: 600px;
-		height: 247px;
-	}
-	@media screen and (min-width: 1024px) {
-		width: 700px;
-		height: 289px;
-	}
-	@media screen and (min-width: 1200px) {
-		width: 600px;
 		height: 338px;
 	}
+	// @media screen and (min-width: 1024px) {
+	// 	width: 700px;
+	// 	height: 289px;
+	// }
+	// @media screen and (min-width: 1200px) {
+	// 	width: 600px;
+	// 	height: 338px;
+	// }
 }
 
 // centered play button (videojs)
