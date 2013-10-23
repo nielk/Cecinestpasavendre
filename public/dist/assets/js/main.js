@@ -182,7 +182,7 @@ $(".slideButton-illus, .slideButton").on("click", function() {
     TweenLite.to(thisSlide.next(), 1, {left:"0px"});
   });
 
-  $("#picto9").on("click", function() {
+  $("#picto9, .qui, #picto-min-9, #picto-min-landscape-9").on("click", function() {
     var thisSlide = $(this).closest('#top').find('#section-00').find('.slide');
     thisSlide.next().addClass('slide-show');
     console.log(thisSlide);

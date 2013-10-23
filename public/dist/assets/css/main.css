@@ -369,25 +369,17 @@ section {
 }*/
 .video-js {
   margin: 0 auto;
-  width: 300px;
-  height: 123px; }
+  width: 250px;
+  height: 140px; }
   @media screen and (min-width: 480px) {
     .video-js {
       width: 400px;
-      height: 165px; } }
+      height: 225px; } }
   @media screen and (min-width: 580px) {
     .video-js {
       width: 500px;
-      height: 206px; } }
+      height: 281px; } }
   @media screen and (min-width: 920px) {
-    .video-js {
-      width: 600px;
-      height: 247px; } }
-  @media screen and (min-width: 1024px) {
-    .video-js {
-      width: 700px;
-      height: 289px; } }
-  @media screen and (min-width: 1200px) {
     .video-js {
       width: 600px;
       height: 338px; } }
@@ -504,7 +496,8 @@ nav ul li {
       margin-bottom: -15px; }
   @media screen and (min-width: 1700px) {
     nav ul li {
-      margin-top: 26px; }
+      margin-top: 26px;
+      width: 9%; }
       nav ul li img {
         height: 100px !important; }
       nav ul li:hover {
@@ -537,13 +530,17 @@ nav ul li {
   top: 0%;
   height: 100px;
   padding-top: 15px; }
+  @media screen and (min-width: 1600px) {
+    .nav-header-shrink {
+      height: 130px; } }
   .nav-header-shrink nav {
     margin-top: -40px; }
   .nav-header-shrink img[id*="picto"] {
     width: 70px; }
     @media screen and (min-width: 1600px) {
       .nav-header-shrink img[id*="picto"] {
-        height: 70px !important;
+        height: 100px !important;
+        width: 100px !important;
         margin-top: 10px; } }
   .nav-header-shrink #logo {
     margin-top: 5px; }

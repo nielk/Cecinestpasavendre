@@ -63,6 +63,7 @@
 nav ul li {
         display: inline;
         width: 11%;
+
         text-align: center;
         float:left;
         margin-top: 40px;
@@ -81,6 +82,7 @@ nav ul li {
         }
     @media screen and (min-width: 1700px) {
         margin-top: 26px;
+        width: 9%;
         img {
             height: 100px !important;
         }
@@ -124,13 +126,17 @@ nav ul li {
         top: 0%;
         height: 100px;
         padding-top: 15px;
+        @media screen and (min-width: 1600px) {
+                    height: 130px;
+                }
         nav {
                 margin-top: -40px;
         }
         img[id*="picto"] {
                 width: 70px;
                 @media screen and (min-width: 1600px) {
-                    height: 70px !important;
+                    height: 100px !important;
+                    width: 100px !important;
                     margin-top: 10px;
                 }
         }
