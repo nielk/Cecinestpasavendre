@@ -172,6 +172,18 @@
 	background-color: #ECE8DA;
 }
 
+
+.inner {
+	width: 100%;
+	z-index: 1005;
+	overflow: hidden;
+	position: relative;
+	display: table;
+	height: 300px;
+}
+
+
+
 // ===========================================================
 // Play button 
 // ===========================================================

@@ -223,6 +223,14 @@ section {
 .modal-content {
   background-color: #ECE8DA; }
 
+.inner {
+  width: 100%;
+  z-index: 1005;
+  overflow: hidden;
+  position: relative;
+  display: table;
+  height: 300px; }
+
 .play-right {
   margin-top: 0%;
   cursor: pointer;
@@ -935,10 +943,11 @@ form {
 .odd {
   margin: 0 10px;
   border: 1px solid #fff;
-  display: inline-block;
+  display: table-cell;
   vertical-align: middle;
   text-align: left;
   float: center;
+  height: 200px;
   max-width: 350px;
   min-width: 200px; }
   @media screen and (min-width: 768px) {
@@ -950,10 +959,11 @@ form {
 .even {
   margin: 0 10px;
   border: 1px solid #fff;
-  display: inline-block;
+  display: table-cell;
   vertical-align: middle;
   text-align: left;
   float: center;
+  height: 100px;
   max-width: 350px;
   min-width: 200px; }
   @media screen and (min-width: 768px) {
@@ -964,6 +974,9 @@ form {
 
 .container-chose {
   text-align: center;
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
   margin-bottom: 4%; }
   @media screen and (min-width: 1024px) {
     .container-chose {
@@ -971,6 +984,8 @@ form {
       margin-left: 10%; } }
   .container-chose p {
     text-align: justify; }
+  .container-chose img {
+    margin-top: 0; }
 
 /* #C9BD9D", "#BD4B57", "#403859", "#A63A59", "#92C0A9", "#C68847", "#DDBF74", "#365B63" */
 .choses:nth-child(1) {
