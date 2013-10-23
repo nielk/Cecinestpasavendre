@@ -31,6 +31,13 @@ a {
 footer h3 {
   font-size: 1.7em; }
 
+.modal a {
+  color: black; }
+  .modal a:hover {
+    color: #b3b3b3;
+    text-decoration: none;
+    transition: all 0.5s; }
+
 .requis {
   color: red; }
 
@@ -374,8 +381,8 @@ section {
       height: 289px; } }
   @media screen and (min-width: 1200px) {
     .video-js {
-      width: 800px;
-      height: 330px; } }
+      width: 600px;
+      height: 338px; } }
 
 .vjs-default-skin .vjs-big-play-button {
   top: 50% !important;
@@ -448,7 +455,7 @@ p {
   font-size: 0.8em; }
   @media screen and (min-width: 380px) {
     p {
-      font-size: 1em; } }
+      font-size: 0.9em; } }
 
 @media screen and (orientation: landscape) {
   #container-nav {
@@ -821,10 +828,13 @@ section {
   overflow: hidden; }
 
 /* FIN Slide animation */
+p {
+  text-align: justify; }
+
 footer .list-inline {
-  text-align: center; }
+  text-align: right; }
   footer .list-inline li {
-    margin: 2% 4%; }
+    margin: 1%; }
 
 /* page contribution styles */
 .error {
@@ -959,6 +969,8 @@ form {
     .container-chose {
       width: 80%;
       margin-left: 10%; } }
+  .container-chose p {
+    text-align: justify; }
 
 /* #C9BD9D", "#BD4B57", "#403859", "#A63A59", "#92C0A9", "#C68847", "#DDBF74", "#365B63" */
 .choses:nth-child(1) {

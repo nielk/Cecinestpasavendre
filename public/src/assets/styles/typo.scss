@@ -68,6 +68,17 @@
             }
         }
 
+        .modal {
+            a {
+            color: black;
+                    &:hover {
+                            color: darken($font-link,30%);
+                            text-decoration: none;
+                            transition: all 0.5s;
+                    }
+            }
+        }
+
 // ===========================================================
 // Links style
 // ===========================================================

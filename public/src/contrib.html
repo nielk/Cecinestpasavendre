@@ -13,7 +13,7 @@
     </head>
     <body ng-app="myApp">
         
-        <div class="container">
+        <div class="container" id="top">
         
         <div ng-controller="myCtrl">
 
@@ -104,11 +104,12 @@
                            ng-model="chose.title"
                            ng-minlength=3
                            ng-maxlength=30 required />
-                    </div>
+                    </div><br />
                     <!-- /Title -->
                     
                     <!-- Content -->
                 <div class="form-group">
+                    <p>Parlez-nous de votre objet et dites-nous ce qu'il représente pour vous !</p>
                     <label>La description de votre objet <span class="requis">*</span> | 300 caractères maximum</label>
                     <div 
                          ng-show="chose_form.content.$dirty && chose_form.content.$invalid">
@@ -119,7 +120,7 @@
                             Le descriptif de votre objet doit au moins contenir 10 caractères.
                         </small>
                         <small class="error" ng-show="chose_form.content.$error.maxlength">
-                            Le descriptif de votre objet doit au plus contenir 450 caractères.
+                            Le descriptif de votre objet doit au plus contenir 300 caractères.
                         </small>
                     </div>
                     <textarea placeholder="Descriptif de votre objet"
@@ -135,7 +136,7 @@
                 
                 <!-- Image -->
                 <div class="form-group">
-                    <label>L'image de votre objet (<span class="requis">optionnel</span>) | 10 Mo maximum - format JPEG ou PNG</label>
+                    <label>L'image de votre objet (<span class="requis">facultatif</span>) | 10 Mo maximum - format JPEG ou PNG</label>
                     <input type="file" 
                            placeholder="L'image de votre objet"
                            name="image"
