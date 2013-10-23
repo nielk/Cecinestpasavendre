@@ -161,10 +161,11 @@ form {
 .odd {
   margin: 0 10px;
   border: 1px solid #fff;
-  display: inline-block;
+  display: table-cell;
   vertical-align: middle;
   text-align: left;
   float: center;
+  height: 200px;
   	max-width: 350px;
   	min-width: 200px;
   @media screen and (min-width: 768px) {
@@ -177,10 +178,11 @@ form {
 .even {
   margin: 0 10px;
   border: 1px solid #fff;
-  display: inline-block;
+  display: table-cell;
   vertical-align: middle;
   text-align: left;
   float: center;
+  height: 100px;
   	max-width: 350px;
   	min-width: 200px;
   @media screen and (min-width: 768px) {
@@ -190,8 +192,12 @@ form {
   }
 }
 
+
 .container-chose {
 	text-align: center;
+	display: table-cell;
+	position: relative;
+	vertical-align: middle;
 	@media screen and (min-width: 1024px) {
   	  width: 80%;
   	  margin-left: 10%;
@@ -200,7 +206,11 @@ form {
   p {
   	text-align: justify;
   }
+  img {
+  	margin-top: 0;
+  }
 }
+
 
 /* #C9BD9D", "#BD4B57", "#403859", "#A63A59", "#92C0A9", "#C68847", "#DDBF74", "#365B63" */
 
