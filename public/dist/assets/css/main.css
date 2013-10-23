@@ -699,7 +699,8 @@ nav ul li {
   font-size: 2.5em;
   background-color: black;
   opacity: 0.4;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 20000; }
 
 #retour {
   position: fixed;
