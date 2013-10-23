@@ -174,7 +174,15 @@ $(document).ready(function(){
   //   TweenLite.to(thisSlide.prev(), 1, {left:"0px"});
   // });
 
-$(".slideButton-illus, .slideButton").on("click", function() {
+$(".slideButton").on("click", function() {
+    var thisSlide = $(this).parent().parent().parent('.slide');
+    thisSlide.next().addClass('slide-show');
+    console.log(thisSlide);
+    TweenLite.to(thisSlide, 1, {left:"-100%"});
+    TweenLite.to(thisSlide.next(), 1, {left:"0px"});
+  });
+
+$(".slideButton-illus").on("click", function() {
     var thisSlide = $(this).parent().parent().parent('.slide');
     thisSlide.next().addClass('slide-show');
     console.log(thisSlide);
