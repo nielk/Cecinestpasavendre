@@ -164,11 +164,11 @@ form {
   display: table-cell;
   vertical-align: middle;
   text-align: left;
-  float: left;
+  float: center;
   height: 200px;
   	max-width: 350px;
   	min-width: 200px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 600px) {
   	max-width: 500px;
   	float: left;
   	min-width: 200px;
@@ -181,11 +181,11 @@ form {
   display: table-cell;
   vertical-align: middle;
   text-align: left;
-  float: right;
+  float: center;
   height: 100px;
   	max-width: 350px;
   	min-width: 200px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 600px) {
   	max-width: 500px;
   	float: right;
   	min-width: 200px;

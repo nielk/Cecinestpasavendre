@@ -946,11 +946,11 @@ form {
   display: table-cell;
   vertical-align: middle;
   text-align: left;
-  float: left;
+  float: center;
   height: 200px;
   max-width: 350px;
   min-width: 200px; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 600px) {
     .odd {
       max-width: 500px;
       float: left;
@@ -962,11 +962,11 @@ form {
   display: table-cell;
   vertical-align: middle;
   text-align: left;
-  float: right;
+  float: center;
   height: 100px;
   max-width: 350px;
   min-width: 200px; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 600px) {
     .even {
       max-width: 500px;
       float: right;
