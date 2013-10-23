@@ -950,7 +950,7 @@ form {
   height: 200px;
   max-width: 350px;
   min-width: 200px; }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 780px) {
     .odd {
       max-width: 500px;
       float: left;
@@ -966,7 +966,7 @@ form {
   height: 100px;
   max-width: 350px;
   min-width: 200px; }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 780px) {
     .even {
       max-width: 500px;
       float: right;
