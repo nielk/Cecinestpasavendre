@@ -37,6 +37,14 @@ $(".slideButton-illus, .slideButton").on("click", function() {
     TweenLite.to(thisSlide, 1, {left:"-100%"});
     TweenLite.to(thisSlide.next(), 1, {left:"0px"});
   });
+
+  $("#picto9").on("click", function() {
+    var thisSlide = $(this).closest('#top').find('#section-00').find('.slide');
+    thisSlide.next().addClass('slide-show');
+    console.log(thisSlide);
+    TweenLite.to(thisSlide, 1, {left:"-100%"});
+    TweenLite.to(thisSlide.next(), 1, {left:"0px"});
+  });
   
   $(".slide-button-2").on("click", function() {
     var thisSlide = $(this).parent().parent().parent('.slide');
