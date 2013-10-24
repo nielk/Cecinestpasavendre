@@ -88,9 +88,8 @@ module.exports = function(grunt) {
         fonts: {
           expand: true,
           cwd: '<%= src.fonts %>',
-          src: ['*.ttf'],
-          dest: '<%= distDir.fonts %>',
-          ext: '.ttf'
+          src: ['*.*'],
+          dest: '<%= distDir.fonts %>'
         },
         img: {
           expand: true,
