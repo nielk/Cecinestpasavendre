@@ -167,7 +167,7 @@ module.exports = function(grunt) {
           separator: ';'
         },
         js: {
-          src: ['<%= src.js %>/*.js','<%= distDir.vendor %>/*.*'],
+          src: ['<%= src.js %>/*.js','<%= distDir.vendor %>/*.js'],
           dest: '<%= distDir.js %>/main.js'
         }
       },
@@ -231,7 +231,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 
-  grunt.registerTask('build', ['clean:defaults', 'sass', 'concat', 'jshint', 'cssmin', 'copy', 'bower', 'index', 'uglify']);
+  grunt.registerTask('build', ['clean:defaults', 'sass', 'jshint', 'cssmin', 'copy', 'bower', 'index', 'concat', 'uglify']);
   grunt.registerTask('build-dev', ['devFlag','build']);
   grunt.registerTask('build-prod', ['prodFlag','build','imagemin']);
 };
