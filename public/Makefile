@@ -22,4 +22,4 @@ coverage:
 .PHONY: clean test jshint coverage
 
 fly:
-	cd .. && git add . && git commit -m '${m}' && git push origin master
+	grunt build-prod && cd .. && git add . && git commit -m '${m}' && git push origin master
