@@ -169,6 +169,10 @@ module.exports = function(grunt) {
         js: {
           src: ['<%= src.js %>/*.js'],
           dest: '<%= distDir.js %>/main.js'
+        },
+        vendor: {
+          src: ['<%= distDir.vendor %>/*.js'],
+          dest: '<%= distDir.js %>/vendor.js'       
         }
       },
 
