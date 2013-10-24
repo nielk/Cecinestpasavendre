@@ -16,7 +16,7 @@ var schema   = require('./schema'),
 var password = 'Levlippcestsuper';
 
 // address mail of moderator
-var moderator = "oger.alexandre@gmail.com";
+var moderator = "nantesnord@vlipp.fr";
 
 /**
  * Returns a JSON of all Choses (to display on index.html)
