@@ -22,4 +22,4 @@ coverage:
 .PHONY: clean test jshint coverage
 
 fly:
-	git add . && git commit -m '${msg}' && git push origin master
+	cd .. && git add . && git commit -m '${m}' && git push origin master
