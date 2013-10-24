@@ -2,12 +2,11 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,300);
 @font-face {
   font-family: 'Magritte';
-  src: url("../fonts/Holmes207.ttf"); }
+  src: url("../fonts/Holmes207.ttf"), url("../fonts/Holmes207.eot"); }
 
 @font-face {
   font-family: 'Holmes';
-  src: url("../fonts/Holmes207.ttf");
-  /*src: url('../fonts/Lobster.ttf');*/ }
+  src: url("../fonts/Holmes207.ttf"), url("../fonts/Holmes207.eot"); }
 
 h1 {
   font-family: "Magritte", Verdana, sans-serif;
