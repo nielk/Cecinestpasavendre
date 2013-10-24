@@ -201,7 +201,11 @@ nav ul li {
 
 .nav-header-phone-portrait {
         @include nav;
-        height: 120%;
+        height: 170%;
+        @media screen and (min-width: 380px) {
+            height: 120%;
+        }
+        
         @media screen and (orientation: portrait) {
                 display: block;
         }
