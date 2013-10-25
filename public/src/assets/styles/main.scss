@@ -26,6 +26,20 @@
 //	 ** Sass **
 // ==========================================================================
 
+/* hack css for facebook box dialog position */
+
+.nub {
+	display: none !important;
+}
+
+.fb-like .fb_edge_comment_widget {
+	top: -300px !important;
+	bottom: 27px !important;
+	left: -84px !important;
+}
+
+/* FIN hack css fb... */
+
 
 
 @import "colors", "typo", "layout", "navigation", "slider";
