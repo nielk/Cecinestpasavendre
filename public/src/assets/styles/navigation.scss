@@ -1,5 +1,6 @@
 // Gradient background header & footer
            @mixin gradient-bg($deg, $color1, $color2, $percent) {
+                background-color: $color1; // fallback
                 background-image: linear-gradient($deg, $color1 $percent, $color1 $percent, $color2 $percent, $color1 100%);
         }
 

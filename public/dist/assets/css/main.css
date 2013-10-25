@@ -552,6 +552,7 @@ nav ul li {
   height: 200px;
   padding: 10px 20px 30px 20px;
   background-color: #f0edde;
+  background-color: #f0edde;
   background-image: linear-gradient(138deg, #f0edde 80%, #f0edde 80%, #ece8da 80%, #f0edde 100%);
   transform: translateY(0%);
   transition: all 0.5s;
@@ -763,6 +764,7 @@ nav ul li {
       line-height: 80px; } }
 
 footer {
+  background-color: #f0edde;
   background-image: linear-gradient(138deg, #f0edde 80%, #f0edde 80%, #ece8da 80%, #f0edde 100%);
   padding: 2em 5em 2em 2em;
   color: #292927; }
