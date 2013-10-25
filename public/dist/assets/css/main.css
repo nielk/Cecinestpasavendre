@@ -1,4 +1,27 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,300);
+.fb-like {
+  z-index: 9999; }
+
+.fbpdl {
+  z-index: 9999 !important;
+  width: 500px;
+  overflow: visible; }
+
+.pam {
+  z-index: 9999 !important;
+  width: 500px;
+  overflow: visible; }
+
+.execphpwidget {
+  z-index: 9999 !important;
+  width: 500px;
+  overflow: visible; }
+
+.fb-like span {
+  z-index: 9999 !important;
+  width: 500px !important;
+  overflow: visible; }
+
 @font-face {
   font-family: 'Magritte';
   src: url("../fonts/Holmes207.ttf"), url("../fonts/Holmes207.eot"); }
