@@ -26,6 +26,38 @@
 //	 ** Sass **
 // ==========================================================================
 
+/* sprites logo partenaires */
+
+#partenaire-01 {
+	display: block;
+	width: 119px;
+	height: 80px;
+	background: url('../images/partenaires.png') 0 0 no-repeat;
+}
+
+#partenaire-02 {
+	display: block;
+	width: 119px;
+	height: 80px;
+	background: url('../images/partenaires.png') 0 -77px no-repeat;
+}
+
+#partenaire-03 {
+	display: block;
+	width: 115px;
+	height: 160px;
+	background: url('../images/partenaires.png') -119px 0 no-repeat;
+}
+
+#partenaire-04 {
+	display: block;
+	width: 119px;
+	height: 160px;
+	background: url('../images/partenaires.png') -235px 0 no-repeat;
+}
+
+/* FIN sprites logo partenaires */
+
 /* hack css for facebook box dialog position */
 
 .nub {
