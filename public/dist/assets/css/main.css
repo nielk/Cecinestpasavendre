@@ -1013,6 +1013,9 @@ form {
 .choses:nth-child(8n+8) {
   background-color: #365B63; }
 
+.social {
+  float: left; }
+
 /*
 @media (max-width: 480px) and (max-width: 768px) { 
 	#logo {
