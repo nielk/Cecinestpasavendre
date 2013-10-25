@@ -1,4 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,300);
+/* hack css for facebook box dialog position */
+.nub {
+  display: none !important; }
+
+.fb-like .fb_edge_comment_widget {
+  top: -300px !important;
+  bottom: 27px !important;
+  left: -84px !important; }
+
+/* FIN hack css fb... */
 @font-face {
   font-family: 'Magritte';
   src: url("../fonts/Holmes207.ttf"), url("../fonts/Holmes207.eot"); }
