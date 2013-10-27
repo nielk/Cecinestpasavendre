@@ -1,19 +1,25 @@
+var target = document.getElementById('spinner');
+new Spinner({color:'#fff', lines: 12}).spin(target);
+
 var myApp = angular.module('myApp',['ngResource', 'ngUpload']);
 
-myApp.directive('validFile',function() {
-	return {
-		require:'ngModel',
-		link: function(scope,el,attrs,ngModel) {
-			//change event is fired when file is selected
-			el.bind('change', function() {
-				scope.$apply(function() {
-					ngModel.$setViewValue(el.val());
-					ngModel.$render();
-				});
-			});
-		}
-	};
-});
+// myApp.directive('validFile',function() {
+// 	return {
+// 		require:'ngModel',
+// 		link: function(scope,el,attrs,ngModel) {
+// 			//change event is fired when file is selected
+// 			el.bind('change', function() {
+// 				scope.$apply(function() {
+// 					ngModel.$setViewValue(el.val());
+// 					ngModel.$render();
+// 				});
+// 			});
+// 		}
+// 	};
+// });
+
+
+
 
 myApp.factory('Chose', function($resource) {
 	return $resource('/chose');
@@ -43,7 +49,8 @@ function myCtrl($scope, Chose) {
 
 	// verify if all fields are correct
 	$scope.valideForm = function() {
-		if($scope.ok() && $scope.chose_form.$valid && $scope.isFileChanged()) {
+		// if($scope.ok() && $scope.chose_form.$valid && $scope.isFileChanged()) {
+		if($scope.ok() && $scope.chose_form.$valid) {
 			return false;
 		}
 		else {
@@ -58,8 +65,12 @@ function myCtrl($scope, Chose) {
 
 	$scope.results = function(content, completed) {
 		if (completed && content.length > 0) {
-			$scope.response = content;
+			$scope.showLoader = false; // hide loading spinner
+			alert('Votre objet a bien été reçut ! \nVous receverez un email lorsqu\'il sera validé.');	
+			$scope.response = content;    
 			$scope.chose = {};
+			location.reload();
+		} else {
 		}
 	};
 }
@@ -128,45 +139,74 @@ $(document).ready(function() {
 		scrollAnimation('#picto-min-landscape-'+i, '#section-0'+i);
 	}
 
-	scrollAnimation('#logo, #picto-min-9, #picto-min-landscape-9, #picto9','#propos');
+	scrollAnimation('#picto-min-9, #picto-min-landscape-9, #picto9','#propos');
 
-	scrollAnimation('#scroll-top', '.container');
-});;$(document).ready(function() {
-	$('.slideButton, button[type=button], .slideButton-illus').click(function() {
-		var thisSlide = $(this).closest('ul.slide');
-		thisSlide.toggleClass('slided');
-	});
+	scrollAnimation('#scroll-top, #logo', '#top');
+});;// $(document).ready(function() {
+// 	// $('.slideButton, button[type=button], .slideButton-illus').click(function() {
+// 	// 	var thisSlide = $(this).closest('ul.slide');
+// 	// 	thisSlide.toggleClass('slided');
+// 	// });
 
-	$('#picto9, #picto-min-9, #picto-min-landscape-9').click(function() {
-		var thisSlide = $(this).closest('#top').find('#section-00').children('ul.slide');
-		thisSlide.toggleClass('slided');
-	});
-});
-;var videoEvent = function(id) {
-	videojs(id).ready(function() {
+// 	// $('#picto9, #picto-min-9, #picto-min-landscape-9').click(function() {
+// 	// 	var thisSlide = $(this).closest('#top').find('#section-00').children('ul.slide');
+// 	// 	thisSlide.toggleClass('slided');
+// 	// });
 
-		var myPlayer = this;
-		var handleFullscreenChange = function(){
-			var myPlayer = this;
-			// Do something when the event is fired
-			$('#container-nav').toggleClass('fullscreen-ie');
-			$('#scroll-top').toggleClass('fullscreen-ie');
-		};
+	
+// });
 
-		var stopBuffering = function(){
-			videojs(id).pause();
-		};
 
-		myPlayer.on('fullscreenchange', handleFullscreenChange);
+$(document).ready(function(){
+  var $slides	= $(".slide");
+  
+  TweenLite.set($slides.filter(":odd"), {left:"100%"});	
+    
+  // $(".slide:nth-child(odd)").on("click", function() {
+  //   var thisSlide = $(this).closest('.slide');
+  //   TweenLite.to(thisSlide, 1, {left:"-100%"});
+  //   TweenLite.to(thisSlide.next(), 1, {left:"0px"});
+  // });
+  
+  // $(".slide:nth-child(even)").on("click", function() {
+  //   var thisSlide = $(this).closest('.slide');
+  //   TweenLite.to(thisSlide, 1, {left:"100%"});
+  //   TweenLite.to(thisSlide.prev(), 1, {left:"0px"});
+  // });
 
-		var btn = document.getElementById(id).parentNode.getElementsByTagName('button')[0];
+$(".slideButton").on("click", function() {
+    var thisSlide = $(this).parent().parent().parent('.slide');
+    thisSlide.next().addClass('slide-show');
+    console.log(thisSlide);
+    TweenLite.to(thisSlide, 1, {left:"-100%"});
+    TweenLite.to(thisSlide.next(), 1, {left:"0px"});
+  });
 
-		btn.onclick = function() {
-			stopBuffering();
-		};
-	});
-};
+$(".slideButton-illus").on("click", function() {
+    var thisSlide = $(this).parent().parent().parent('.slide');
+    thisSlide.next().addClass('slide-show');
+    console.log(thisSlide);
+    TweenLite.to(thisSlide, 1, {left:"-100%"});
+    TweenLite.to(thisSlide.next(), 1, {left:"0px"});
+  });
 
-for(var i = 1; i <= 8; i++) {
-	videoEvent('video-player-0'+i);
-}
+  $("#picto9, .qui, #picto-min-9, #picto-min-landscape-9").on("click", function() {
+    var thisSlide = $(this).closest('#top').find('#section-00').find('.slide');
+    thisSlide.next().addClass('slide-show');
+    console.log(thisSlide);
+    TweenLite.to(thisSlide, 1, {left:"-100%"});
+    TweenLite.to(thisSlide.next(), 1, {left:"0px"});
+  });
+  
+  $(".slide-button-2").on("click", function() {
+    var thisSlide = $(this).parent().parent().parent('.slide');
+    TweenLite.to(thisSlide, 1, {left:"100%"});
+    TweenLite.to(thisSlide.prev(), 1, {left:"0px"});
+  });
+
+  $("button[type=button]").on("click", function() {
+    var thisSlide = $(this).parent().parent().parent().parent('.slide');
+    TweenLite.to(thisSlide, 1, {left:"100%"});
+    TweenLite.to(thisSlide.prev(), 1, {left:"0px"});
+  });
+});;

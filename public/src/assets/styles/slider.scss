@@ -4,12 +4,17 @@
     margin-top: 1%;
     background-image: url('../images/play.png');
     background-repeat: no-repeat;
-    background-size: 150px 150px;
-/*    max-height: 220px;
+    background-size: 100px 100px;
+    padding: 23% 49% 18% 22%;
+    @media screen and (min-width: 380px) {
+    	background-size: 150px 150px;
+    	padding: 32% 49% 35% 30%;
+    }
+/*  max-height: 220px;
     max-width: 220px;*/
     cursor: pointer;
     z-index: 100;
-    padding: 33% 35% 35% 30%;
+    
     line-height: 14px;
     color: black;
 
@@ -66,68 +71,121 @@
 	height: 35px;
 }
 
-/* Slide animation */
+/* alex slider */
 
-/* contient les deux sections et garde la fenêtre à la bonne taille */
+.container-slide {
+    position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	// margin: 100px auto 0px;
+}
+
+.slide-show {
+	visibility: visible !important;
+}
+
+.slide {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: table;
+	// top: 0px;
+	// left: 0px;
+}
+
+.slide > div {
+	display: table-cell;
+	vertical-align: middle;
+}			
+	.slide:nth-child(1){
+		
+	}
+				
+	.slide:nth-child(2){
+		// margin-top: 43%;
+		// background-color: blue;
+		// color: white;
+		visibility: hidden;
+		@media screen and (orientation: landscape) {
+			// margin-top: 23%;
+		}
+
+		@media screen and (min-width: 720px) {
+			// margin-top: 13%;
+		}
+	}
+
+	// .fix-slide {
+	// 		margin-top: 24% !important;
+	// 		@media screen and (min-width: 1200px) {
+	// 			margin-top: 15% !important;
+	// 		}
+	// 	}
+
+
+/* /alex slide */
+
+/* Slide animation */
 
 section {
 	width: 100%;
 	z-index: 1005;
 	overflow: hidden;
-	.slide {
-		width: 200%;
-		height:100%;
-		padding:0;
-		margin:0;
-		list-style-type: none;
-	  transition: all 800ms ease-in-out;
+// 	// .slide {
+// 	// 	width: 200%;
+// 	// 	height:100%;
+// 	// 	padding:0;
+// 	// 	margin:0;
+// 	// 	list-style-type: none;
+// 	  // transition: all 800ms ease-in-out;
 
-		li {
-			display: table;
-			height:100%;
-			width:50%;
-			float:left;
+// 		li {
+// 			display: table;
+// 			height:100%;
+// 			width:50%;
+// 			float:left;
 
-			.row {
-				display: table-cell;
-				vertical-align: middle;
-				width:100%;
+// 			// .row {
+// 			// 	display: table-cell;
+// 			// 	vertical-align: middle;
+// 			// 	width:100%;
 
-				video {
-					opacity:1;
-				}
-			}
-		}
-	}
+// 				video {
+// 					opacity:1;
+// 				}
+			
+// 		}
+	
 }
 
-.slide-02 {
-	  	opacity: 0;
-	  	transition: all 0.5s;
-	}
+// .slide-02 {
+// 	  	opacity: 0;
+// 	  	// transition: all 0.5s;
+// 	}
 
-.csstransforms3d {
-	 .slided {
-	  transform: translate3d(-50%,0,0);
-	  transition: all 800ms ease-in-out;
-	  .slide-01 {
-	  	opacity: 0;
-	  	transition: all 0.5s;
-	  }
-	  .slide-02 {
-	  	opacity: 1;
-	  	transition: all 0.5s;
-	  }
-	}
-}
-.no-csstransforms3d {
-	.slide {
-	  position: absolute;
-	  left:0;
-		&.slided {
-		  left:-100%;
-		}
-	}
-}
+// .csstransforms3d {
+// 	 .slided {
+// 	  transform: translate3d(-50%,0,0);
+// 	  transition: all 800ms ease-in-out;
+// 	  .slide-01 {
+// 	  	opacity: 0;
+// 	  	transition: all 0.5s;
+// 	  }
+// 	  .slide-02 {
+// 	  	opacity: 1;
+// 	  	transition: all 0.5s;
+// 	  }
+// 	}
+// }
+// .no-csstransforms3d {
+// 	.slide {
+// 	  position: absolute;
+// 	  left:0;
+// 		&.slided {
+// 		  left:-100%;
+// 		}
+// 	}
+// }
 
 /* FIN Slide animation */

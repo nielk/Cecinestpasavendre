@@ -44,28 +44,63 @@
 // illustration accueil
 // ===========================================================
 
+	#propos {
+		margin-top: -15%;
+		height: 100%;
+
+		// @media screen and (min-width: 380px) {
+		// 	margin-top: 0;
+		// 	height: 600px;
+		// }
+
+		// @media screen and (min-width: 720px) {
+		// 	margin-top: -13%;
+		// 	height: 600px;
+		// }
+
+		// @media screen and (orientation: portrait) and (min-width: 720px) {
+		// 	margin-top: -34%;
+		// 	height: 600px;
+		// }
+
+		// @media screen and (min-width: 960px) {
+		// 	margin-top: -12%;
+		// 	height: 600px;
+		// }
+
+		@media screen and (min-width: 1680px) {
+			margin-top: -7%;
+		}
+	}
+
 	section {
-		height: 130%;
+		height: 100%;
 		@media screen and (min-width: 960px) {
 			height: 90%;
 		}
 		padding-left: 15px;
 		padding-right: 18px;
 		&:nth-child(2) {
-			padding-top: 150px;
-			height: 220%;
+			padding-top: 92%;
+			height: 190%;
+			@media screen and (min-width: 380px) {
+				padding-top: 150px;
+				height: 150%;
+			}
+			
 			@media screen and (orientation: landscape) {
-				height: 350%;
+				height: 134%;
 			}
 			@media screen and (min-width: 720px) {
 				padding-top: 250px;
-				height: 100%;
+				height: 134%;
 			}
 
 
 			background-color: #365B63;
 			background-image: linear-gradient(128deg, #365B63 70%, rgba(64, 56, 89, 0) 70%), url('../images/bgsection-00.png');
 			background-position: 0% 10%;
+			background-size: cover;
 			color: $font-color !important;
 			
 		}
@@ -142,6 +177,18 @@
 	background-color: #ECE8DA;
 }
 
+
+.inner {
+	width: 100%;
+	z-index: 1005;
+	overflow: hidden;
+	position: relative;
+	display: table;
+	height: 300px;
+}
+
+
+
 // ===========================================================
 // Play button 
 // ===========================================================
@@ -172,6 +219,13 @@
 	margin-right: auto;
 	width: 70px;
 	height: 70px;
+}
+
+.btn-contrib {
+	border-radius: 9px;
+	height: 30px;
+	border: 0;
+	color: black;
 }
 
 /* test */
@@ -206,6 +260,37 @@
 // ===========================================================
 // Box
 // ===========================================================
+
+.loader {
+	display: block;
+	position: fixed;
+	left: 45%;
+	top: 44%;
+	z-index: 100001;
+	width: 8%;
+	padding: 0;
+}
+
+.loader-msg {
+	display: block;
+	position: fixed;
+	left: 45%;
+	top: 49%;
+	z-index: 100001;
+	width: 15%;
+	padding: 0;
+}
+
+.loader-container {
+	top: 0;
+	left: 0;
+	z-index: 300000000;
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.9);
+}
 
 .photo-redac {
 	width: 120px !important;
@@ -273,16 +358,51 @@
 // ===========================================================
 
 .video-js {
-	/*padding-top: 36.25%;*/
-	padding-top: 40.25%;
-}
-.vjs-fullscreen {
-	padding-top: 0px;
+	margin: 0 auto;
+	width: 250px;
+	height: 140px;
+	@media screen and (min-width: 480px) {
+		width: 400px;
+		height: 225px;
+	}
+	@media screen and (min-width: 580px) {
+		width: 500px;
+		height: 281px;
+	}
+	@media screen and (min-width: 920px) {
+		width: 600px;
+		height: 338px;
+	}
+	// @media screen and (min-width: 1024px) {
+	// 	width: 700px;
+	// 	height: 289px;
+	// }
+	// @media screen and (min-width: 1200px) {
+	// 	width: 600px;
+	// 	height: 338px;8
+	// }
 }
 
-#video-player {
-	z-index: 3000;
+// centered play button (videojs)
+
+.vjs-default-skin .vjs-big-play-button
+{
+	top: 50% !important;
+	left: 50% !important;
+	margin: -4em auto auto -6em !important;
 }
+
+// .video-js {
+// 	/*padding-top: 36.25%;*/
+// 	padding-top: 40.25%;
+// }
+// .vjs-fullscreen {
+// 	padding-top: 0px;
+// }
+
+// #video-player {
+// 	z-index: 3000;
+// }
 
 // ===========================================================
 // Some stuff..
@@ -361,4 +481,11 @@ html, body {
 body {
 	font-family: $font;
 	color: $font-color;
+}
+
+p {
+	font-size: 0.8em;
+	@media screen and (min-width: 380px) {
+		font-size: 0.9em;
+	}
 }
