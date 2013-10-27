@@ -13,13 +13,13 @@
     </head>
     <body ng-app="myApp">
         
-        <div class="container">
+        <div class="container" id="top">
         
         <div ng-controller="myCtrl">
 
         <div id="menu-contrib">
           <div id="retour"><a href="./index.html">retour</a></div>
-          <div id="button-form-toggle">J'ajoute mon objet!</div>
+          <div id="button-form-toggle">J'ajoute mon objet !</div>
         </div>
 
         <div id="form-container">
@@ -29,8 +29,8 @@
                 
                 <!-- Author -->
                 <div class="form-group">
-                    <label for="author">Votre nom</label>
-                    <div class="error"
+                    <label for="author">Votre nom <span class="requis">*</span></label>
+                    <div 
                          ng-show="chose_form.author.$dirty && chose_form.author.$invalid">
                         <small class="error" ng-show="chose_form.author.$error.required">
                             Vous devez entrer votre nom.
@@ -55,8 +55,8 @@
                 
                 <!-- Email -->
                 <div class="form-group">
-                    <label for="email">Votre email</label>
-                    <div class="error"
+                    <label for="email">Votre email <span class="requis">*</span></label>
+                    <div 
                          ng-show="chose_form.email.$dirty && chose_form.email.$invalid">
                         <small class="error" ng-show="chose_form.email.$error.required">
                             Vous devez entrer votre email.
@@ -84,8 +84,8 @@
                 
                 <!-- Title -->
                 <div class="form-group">
-                <label>Le nom de votre objet</label>
-                    <div class="error"
+                <label>Le nom de votre objet <span class="requis">*</span></label>
+                    <div
                          ng-show="chose_form.title.$dirty && chose_form.title.$invalid">
                         <small class="error" ng-show="chose_form.title.$error.required">
                             Vous devez entrer le nom de votre objet.
@@ -104,13 +104,14 @@
                            ng-model="chose.title"
                            ng-minlength=3
                            ng-maxlength=30 required />
-                    </div>
+                    </div><br />
                     <!-- /Title -->
                     
                     <!-- Content -->
                 <div class="form-group">
-                    <label>La description de votre objet | 300 caractères maximum</label>
-                    <div class="error"
+                    <p>Parlez-nous de votre objet et dites-nous ce qu'il représente pour vous !</p>
+                    <label>La description de votre objet <span class="requis">*</span> | 300 caractères maximum</label>
+                    <div 
                          ng-show="chose_form.content.$dirty && chose_form.content.$invalid">
                         <small class="error" ng-show="chose_form.content.$error.required">
                             Vous devez entrer un descriptif de votre objet.
@@ -135,7 +136,7 @@
                 
                 <!-- Image -->
                 <div class="form-group">
-                    <label>L'image de votre objet | 10 Mo maximum - format JPEG ou PNG</label>
+                    <label>L'image de votre objet (<span class="requis">facultatif</span>) | 10 Mo maximum - format JPEG ou PNG</label>
                     <input type="file" 
                            placeholder="L'image de votre objet"
                            name="image"
@@ -145,19 +146,19 @@
                            valid-file 
                            onchange="angular.element(this).scope().fileChanged()"/>
                 </div>
-                <small class="sucess" ng-show="isFileChanged()">
+                <!-- <small class="sucess" ng-show="isFileChanged()">
                             OK
                 </small>
                 <small class="error" ng-show="!isFileChanged()">
                 Image requise
-                </small>
+                </small> -->
                 <!-- /Image -->
                 
-                <div class="alert alert-info">Server Response: {{response}} </div>
+               <!--  <div class="alert alert-info">Server Response: {{response}} </div> -->
 
                 <!-- CAPTCHA -->
                 <div class="form-group">
-                  <label>Combien font {{number[num01]}} plus {{number[num02]}} ?</label>
+                  <label>Combien font {{number[num01]}} plus {{number[num02]}} ? <span class="requis">*</span></label>
                   <input type="text" name="captcha" ng-model="answer" value="" />
                   <small class="error" ng-show="!ok() && chose_form.captcha.$dirty">
                   Incorrect !
@@ -168,20 +169,35 @@
                 </div>
                 <!-- /CAPTCHA -->
                 
-                <input type="submit" ng-disabled="valideForm()" upload-submit="results(content, completed)" value="Submit" class="button radius">
+                <input type="submit" ng-click="showLoader = !showLoader" ng-show="!valideForm()" ng-disabled="valideForm()" upload-submit="results(content, completed)" value="Soumettre" class="btn-contrib">
             </fieldset>
+            <div class="loader-container" ng-show="showLoader">
+                <div id="spinner"  class="loader"></div>
+                <p class="loader-msg">Merci de patienter...</p>
+                <!-- <img src="./assets/images/loader.gif"/> -->
+            </div>
         </form>
             
         </div>    
         </div>
 
+        <div id="description-contrib">
+          <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+              <h2>Vos objets !</h2>
+              <p>
+                  Et vous ? Si vous deviez choisir un objet auquel vous tenez particulièrement, quel serait-il et que dirait-il de vous ? Contribuez au projet en postant <a href=""><em><u>votre objet</u></em></a> sur la plateforme participative du webdocumentaire ! Dis-moi ton objet, je te dirai qui tu es !
+              </p>
+            </div>
+          </div>
+        </div>
 
-        <div ng-controller="listCtrl">
+        <div ng-controller="listCtrl" id="listr" ng-init="count=10">
         <div ng-repeat="chose in choses | orderBy:'date':true | limitTo:count" class="choses">
           <section class="inner">
                 <div class="row container-chose">
                   <div class="col-sm-2 col-md-2 col-lg-2" ng-class-odd="'odd'" ng-class-even="'even'">
-                    <img src="./uploads/{{chose.image}}" class="img-circle chose" />
+                    <img src="./uploads/{{chose.image}}" class="img-circle chose" width="200px" height="200px" />
                   </div>
                   <div class="col-sm-5 col-md-5 col-lg-5" ng-class-odd="'even'" ng-class-even="'odd'">
                     <h2>{{chose.title}} par {{chose.author}}</h2>
@@ -190,7 +206,12 @@
                 </div>
           </section>
           </div>
-          <div class="container">
+
+
+
+
+
+          <!-- <div class="container">
             <div class="row">
                <button ng-click="count = count + 10" ng-init="count=10" style="
                width: 100px;
@@ -204,11 +225,31 @@
                 +
                 </button>
             </div>
-          </div>
+          </div> -->
+        </div>
+
+
+
+          <!-- <div class="container">
+            <div class="row">
+               <button ng-click="count = count + 10" ng-init="count=10" style="
+               width: 100px;
+               height: 100px;
+               background-color: rgba(255,255,255,0.8);
+               border-radius: 100px;
+               color: black;
+               margin-left: 47%;
+               line-height: 80px;
+               ">
+                +
+                </button>
+            </div>
+          </div> -->
         </div>
         
         <div id="scroll-top">^</div>
 </div>
+        <script src="./assets/vendor/spin.js.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="assets/vendor/jquery.min.js"><\/script>')</script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
@@ -216,5 +257,19 @@
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js"></script>
         <script src="./assets/vendor/ngUpload.js"></script>
         <script src="./assets/js/main.js"></script>
+
+        <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+              // count = count + 10;
+              var scope = angular.element($("#listr")).scope();
+              scope.$apply(function(){
+                scope.count = scope.count + 10;
+              });
+            }
+          });
+        });
+        </script>
     </body>
 </html>

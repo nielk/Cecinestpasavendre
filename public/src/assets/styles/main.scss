@@ -26,17 +26,77 @@
 //	 ** Sass **
 // ==========================================================================
 
+/* sprites logo partenaires */
+
+#partenaire-01 {
+	display: block;
+	width: 119px;
+	height: 80px;
+	background: url('../images/partenaires.png') 0 0 no-repeat;
+}
+
+#partenaire-02 {
+	display: block;
+	width: 119px;
+	height: 80px;
+	background: url('../images/partenaires.png') 0 -77px no-repeat;
+}
+
+#partenaire-03 {
+	display: block;
+	width: 115px;
+	height: 160px;
+	background: url('../images/partenaires.png') -119px 0 no-repeat;
+}
+
+#partenaire-04 {
+	display: block;
+	width: 119px;
+	height: 160px;
+	background: url('../images/partenaires.png') -235px 0 no-repeat;
+}
+
+/* FIN sprites logo partenaires */
+
+/* hack css for facebook box dialog position */
+
+.nub {
+	display: none !important;
+}
+
+.fb-like .fb_edge_comment_widget {
+	top: -300px !important;
+	bottom: 27px !important;
+	left: -84px !important;
+}
+
+/* FIN hack css fb... */
+
+
 
 @import "colors", "typo", "layout", "navigation", "slider";
 
+p {
+  	text-align: justify;
+  }
+
+footer .list-inline {
+	text-align: right;
+
+	li {
+		margin: 1%;
+	}
+}
 
 /* page contribution styles */
 
 .error {
+  background-color: white;
   color: red;
+  border: 2px solid red;
 }  
 .sucess {
-  color: green;
+  
 }  
 
 form {
@@ -77,12 +137,25 @@ form {
   	position: absolute;
   }
 
-  z-index: 1000;
+  z-index: 10000;
   width: 100%;
   height: 100px;
   background: blue;
   background-color: #f0edde;
   background-image: linear-gradient(138deg, #f0edde 80%, #f0edde 80%, #ece8da 80%, #f0edde 100%);
+}
+
+#description-contrib {
+	margin-top: 30%;
+	@media screen and (min-width: 480px) {
+		margin-top: 20%;
+	}
+	@media screen and (min-width: 1080px) {
+		margin-top: 15%;
+	}
+	@media screen and (min-width: 1400px) {
+		margin-top: 10%;
+	}
 }
 
 #button-form-toggle {
@@ -108,7 +181,7 @@ form {
 	}
 
 	@media screen and (min-width: 720px) {
-		font-size: 3em;
+		font-size: 2.8em;
 	}
 }
 
@@ -135,13 +208,14 @@ form {
 .odd {
   margin: 0 10px;
   border: 1px solid #fff;
-  display: inline-block;
+  display: table-cell;
   vertical-align: middle;
   text-align: left;
   float: center;
+  height: 200px;
   	max-width: 350px;
   	min-width: 200px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 780px) {
   	max-width: 500px;
   	float: left;
   	min-width: 200px;
@@ -151,26 +225,39 @@ form {
 .even {
   margin: 0 10px;
   border: 1px solid #fff;
-  display: inline-block;
+  display: table-cell;
   vertical-align: middle;
   text-align: left;
   float: center;
+  height: 100px;
   	max-width: 350px;
   	min-width: 200px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 780px) {
   	max-width: 500px;
   	float: right;
   	min-width: 200px;
   }
 }
 
+
 .container-chose {
 	text-align: center;
+	display: table-cell;
+	position: relative;
+	vertical-align: middle;
 	@media screen and (min-width: 1024px) {
   	  width: 80%;
   	  margin-left: 10%;
   }
+  margin-bottom: 4%;
+  p {
+  	text-align: justify;
+  }
+  img {
+  	margin-top: 0;
+  }
 }
+
 
 /* #C9BD9D", "#BD4B57", "#403859", "#A63A59", "#92C0A9", "#C68847", "#DDBF74", "#365B63" */
 
@@ -209,6 +296,11 @@ form {
 .choses:nth-child(8n+8) {
   background-color: #365B63;
 }
+
+.social {
+	float: left;
+}
+
 
 /*
 @media (max-width: 480px) and (max-width: 768px) { 

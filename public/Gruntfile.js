@@ -10,6 +10,7 @@ module.exports = function(grunt) {
       css: '<%= src.assets %>/styles',
       fonts: '<%= src.assets %>/fonts',
       images: '<%= src.assets %>/images',
+      videos: '<%= src.assets %>/videos',
     },
 
     components: {
@@ -49,6 +50,7 @@ module.exports = function(grunt) {
         vendor: '<%= distDir.assets %>/vendor',
         fonts: '<%= distDir.assets %>/fonts',
         images: '<%= distDir.assets %>/images',
+        videos: '<%= distDir.assets %>/videos',
         css: '<%= distDir.assets %>/css',
         js: '<%= distDir.assets %>/js'
       },
@@ -86,15 +88,20 @@ module.exports = function(grunt) {
         fonts: {
           expand: true,
           cwd: '<%= src.fonts %>',
-          src: ['*.ttf'],
-          dest: '<%= distDir.fonts %>',
-          ext: '.ttf'
+          src: ['*.*'],
+          dest: '<%= distDir.fonts %>'
         },
         img: {
           expand: true,
           cwd: '<%= src.images %>',
           src: ['*.*'],
           dest: '<%= distDir.images %>'
+        },
+        video: {
+          expand: true,
+          cwd: '<%= src.videos %>',
+          src: ['*.*'],
+          dest: '<%= distDir.videos %>'
         },
         imgUpload: {
           expand: true,
@@ -150,7 +157,7 @@ module.exports = function(grunt) {
             tasks: ['sass','copy:cssDev']
           },
           js: {
-            files: ['<%= src.path %>/assets/js/*'],
+            files: ['<%= src.path %>/assets/js/*.js'],
             tasks: ['clean:js', 'concat:js']
           }
       },
@@ -224,7 +231,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 
-  grunt.registerTask('build', ['clean:defaults', 'sass', 'concat', 'jshint', 'cssmin', 'copy', 'bower', 'index', 'uglify']);
+  grunt.registerTask('build', ['clean:defaults', 'sass', 'jshint', 'cssmin', 'copy', 'bower', 'index', 'concat', 'uglify']);
   grunt.registerTask('build-dev', ['devFlag','build']);
   grunt.registerTask('build-prod', ['prodFlag','build','imagemin']);
 };
