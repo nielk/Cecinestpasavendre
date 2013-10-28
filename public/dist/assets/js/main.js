@@ -3,24 +3,6 @@ new Spinner({color:'#fff', lines: 12}).spin(target);
 
 var myApp = angular.module('myApp',['ngResource', 'ngUpload']);
 
-// myApp.directive('validFile',function() {
-// 	return {
-// 		require:'ngModel',
-// 		link: function(scope,el,attrs,ngModel) {
-// 			//change event is fired when file is selected
-// 			el.bind('change', function() {
-// 				scope.$apply(function() {
-// 					ngModel.$setViewValue(el.val());
-// 					ngModel.$render();
-// 				});
-// 			});
-// 		}
-// 	};
-// });
-
-
-
-
 myApp.factory('Chose', function($resource) {
 	return $resource('/chose');
 });
@@ -66,7 +48,7 @@ function myCtrl($scope, Chose) {
 	$scope.results = function(content, completed) {
 		if (completed && content.length > 0) {
 			$scope.showLoader = false; // hide loading spinner
-			alert('Votre objet a bien été reçut ! \nVous receverez un email lorsqu\'il sera validé.');	
+			alert('Votre objet a bien été reçu ! \nVous recevrez un email lorsqu\'il sera validé.\nMerci de votre participation !');	
 			$scope.response = content;    
 			$scope.chose = {};
 			location.reload();
@@ -142,71 +124,44 @@ $(document).ready(function() {
 	scrollAnimation('#picto-min-9, #picto-min-landscape-9, #picto9','#propos');
 
 	scrollAnimation('#scroll-top, #logo', '#top');
-});;// $(document).ready(function() {
-// 	// $('.slideButton, button[type=button], .slideButton-illus').click(function() {
-// 	// 	var thisSlide = $(this).closest('ul.slide');
-// 	// 	thisSlide.toggleClass('slided');
-// 	// });
-
-// 	// $('#picto9, #picto-min-9, #picto-min-landscape-9').click(function() {
-// 	// 	var thisSlide = $(this).closest('#top').find('#section-00').children('ul.slide');
-// 	// 	thisSlide.toggleClass('slided');
-// 	// });
-
-	
-// });
-
-
-$(document).ready(function(){
-  var $slides	= $(".slide");
+});;$(document).ready(function(){
+  var $slides	= $('.slide');
   
-  TweenLite.set($slides.filter(":odd"), {left:"100%"});	
-    
-  // $(".slide:nth-child(odd)").on("click", function() {
-  //   var thisSlide = $(this).closest('.slide');
-  //   TweenLite.to(thisSlide, 1, {left:"-100%"});
-  //   TweenLite.to(thisSlide.next(), 1, {left:"0px"});
-  // });
-  
-  // $(".slide:nth-child(even)").on("click", function() {
-  //   var thisSlide = $(this).closest('.slide');
-  //   TweenLite.to(thisSlide, 1, {left:"100%"});
-  //   TweenLite.to(thisSlide.prev(), 1, {left:"0px"});
-  // });
+  TweenLite.set($slides.filter(':odd'), {left:'100%'});	
 
-$(".slideButton").on("click", function() {
+  $('.slideButton').on('click', function() {
     var thisSlide = $(this).parent().parent().parent('.slide');
     thisSlide.next().addClass('slide-show');
-    console.log(thisSlide);
-    TweenLite.to(thisSlide, 1, {left:"-100%"});
-    TweenLite.to(thisSlide.next(), 1, {left:"0px"});
+    TweenLite.to(thisSlide, 1, {left:'-100%'});
+    TweenLite.to(thisSlide.next(), 1, {left:'0px'});
   });
 
-$(".slideButton-illus").on("click", function() {
+  $('.slideButton-illus').on('click', function() {
     var thisSlide = $(this).parent().parent().parent('.slide');
     thisSlide.next().addClass('slide-show');
-    console.log(thisSlide);
-    TweenLite.to(thisSlide, 1, {left:"-100%"});
-    TweenLite.to(thisSlide.next(), 1, {left:"0px"});
+    TweenLite.to(thisSlide, 1, {left:'-100%'});
+    TweenLite.to(thisSlide.next(), 1, {left:'0px'});
   });
 
-  $("#picto9, .qui, #picto-min-9, #picto-min-landscape-9").on("click", function() {
+  $('#picto9, .qui, #picto-min-9, #picto-min-landscape-9').on('click', function() {
     var thisSlide = $(this).closest('#top').find('#section-00').find('.slide');
     thisSlide.next().addClass('slide-show');
-    console.log(thisSlide);
-    TweenLite.to(thisSlide, 1, {left:"-100%"});
-    TweenLite.to(thisSlide.next(), 1, {left:"0px"});
+    TweenLite.to(thisSlide, 1, {left:'-100%'});
+    TweenLite.to(thisSlide.next(), 1, {left:'0px'});
   });
   
-  $(".slide-button-2").on("click", function() {
+  $('.slide-button-2').on('click', function() {
     var thisSlide = $(this).parent().parent().parent('.slide');
-    TweenLite.to(thisSlide, 1, {left:"100%"});
-    TweenLite.to(thisSlide.prev(), 1, {left:"0px"});
+    TweenLite.to(thisSlide, 1, {left:'100%'});
+    TweenLite.to(thisSlide.prev(), 1, {left:'0px'});
   });
 
-  $("button[type=button]").on("click", function() {
+  $('button[type=button]').on('click', function() {
     var thisSlide = $(this).parent().parent().parent().parent('.slide');
-    TweenLite.to(thisSlide, 1, {left:"100%"});
-    TweenLite.to(thisSlide.prev(), 1, {left:"0px"});
+    TweenLite.to(thisSlide, 1, {left:'100%'});
+    TweenLite.to(thisSlide.prev(), 1, {left:'0px'});
+    // pause the video
+    var video = $(this).prev().find('video')[0];
+    if (video) video.pause();
   });
-});;
+});
