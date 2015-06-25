@@ -1,5 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,300);
 /* sprites logo partenaires */
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300);
 #partenaire-01 {
   display: block;
   width: 119px;
@@ -38,11 +38,9 @@
 @font-face {
   font-family: 'Magritte';
   src: url("../fonts/Holmes207.ttf"), url("../fonts/Holmes207.eot"); }
-
 @font-face {
   font-family: 'Holmes';
   src: url("../fonts/Holmes207.ttf"), url("../fonts/Holmes207.eot"); }
-
 h1 {
   font-family: "Magritte", Verdana, sans-serif;
   font-size: 5em; }
@@ -78,56 +76,56 @@ footer h3 {
 /*$color: "#403859", "#91BFA8", "#E6C77D", "#BD4B56", "#365B63", "#C8BC9C", "#C58747", "#A53959";*/
 section:nth-child(3) {
   background-color: #C9BD9D;
-  background: linear-gradient(128deg, rgba(0, 0, 0, 0) 40%, #C9BD9D 40%), url("../images/bgsection-01.jpg") left top; }
+  background: linear-gradient(128deg, transparent 40%, #C9BD9D 40%), url("../images/bgsection-01.jpg") left top; }
   @media screen and (min-width: 720px) {
     section:nth-child(3) {
       background-size: contain; } }
 
 section:nth-child(4) {
   background-color: #BD4B57;
-  background: linear-gradient(48deg, #BD4B57 58%, rgba(0, 0, 0, 0) 58%), url("../images/bgsection-02.jpg") right top; }
+  background: linear-gradient(48deg, #BD4B57 58%, transparent 58%), url("../images/bgsection-02.jpg") right top; }
   @media screen and (min-width: 720px) {
     section:nth-child(4) {
       background-size: contain; } }
 
 section:nth-child(5) {
   background-color: #403859;
-  background: linear-gradient(128deg, rgba(0, 0, 0, 0) 40%, #403859 40%), url("../images/bgsection-03.jpg") left top; }
+  background: linear-gradient(128deg, transparent 40%, #403859 40%), url("../images/bgsection-03.jpg") left top; }
   @media screen and (min-width: 720px) {
     section:nth-child(5) {
       background-size: contain; } }
 
 section:nth-child(6) {
   background-color: #A63A59;
-  background: linear-gradient(48deg, #A63A59 58%, rgba(0, 0, 0, 0) 58%), url("../images/bgsection-04.jpg") right top; }
+  background: linear-gradient(48deg, #A63A59 58%, transparent 58%), url("../images/bgsection-04.jpg") right top; }
   @media screen and (min-width: 720px) {
     section:nth-child(6) {
       background-size: contain; } }
 
 section:nth-child(7) {
   background-color: #92C0A9;
-  background: linear-gradient(128deg, rgba(0, 0, 0, 0) 40%, #92C0A9 40%), url("../images/bgsection-05.jpg") left top; }
+  background: linear-gradient(128deg, transparent 40%, #92C0A9 40%), url("../images/bgsection-05.jpg") left top; }
   @media screen and (min-width: 720px) {
     section:nth-child(7) {
       background-size: contain; } }
 
 section:nth-child(8) {
   background-color: #C68847;
-  background: linear-gradient(48deg, #C68847 58%, rgba(0, 0, 0, 0) 58%), url("../images/bgsection-06.jpg") right top; }
+  background: linear-gradient(48deg, #C68847 58%, transparent 58%), url("../images/bgsection-06.jpg") right top; }
   @media screen and (min-width: 720px) {
     section:nth-child(8) {
       background-size: contain; } }
 
 section:nth-child(9) {
   background-color: #DDBF74;
-  background: linear-gradient(128deg, rgba(0, 0, 0, 0) 40%, #DDBF74 40%), url("../images/bgsection-07.jpg") left top; }
+  background: linear-gradient(128deg, transparent 40%, #DDBF74 40%), url("../images/bgsection-07.jpg") left top; }
   @media screen and (min-width: 720px) {
     section:nth-child(9) {
       background-size: contain; } }
 
 section:nth-child(10) {
   background-color: #365B63;
-  background: linear-gradient(48deg, #365B63 58%, rgba(0, 0, 0, 0) 58%), url("../images/bgsection-08.jpg") right top; }
+  background: linear-gradient(48deg, #365B63 58%, transparent 58%), url("../images/bgsection-08.jpg") right top; }
   @media screen and (min-width: 720px) {
     section:nth-child(10) {
       background-size: contain; } }
@@ -190,10 +188,10 @@ section {
     padding-top: 92%;
     height: 190%;
     background-color: #365B63;
-    background-image: linear-gradient(128deg, #365b63 70%, rgba(64, 56, 89, 0) 70%), url("../images/bgsection-00.png");
+    background-image: linear-gradient(128deg, #365B63 70%, rgba(64, 56, 89, 0) 70%), url("../images/bgsection-00.png");
     background-position: 0% 10%;
     background-size: cover;
-    color: #ebe8da !important; }
+    color: #EBE8DA !important; }
     @media screen and (min-width: 380px) {
       section:nth-child(2) {
         padding-top: 150px;
@@ -224,13 +222,13 @@ section {
 #contrib-00 {
   padding: 0;
   color: white;
-  background-image: linear-gradient(#91bfa8, #91bfa8) !important; }
+  background-image: linear-gradient(#91BFA8, #91BFA8) !important; }
   @media screen and (min-width: 768px) {
     #contrib-00 {
       padding: 10% 20% 0% 20%; } }
 
 #contrib-01 {
-  background-image: linear-gradient(#3f3758, #3f3758) !important; }
+  background-image: linear-gradient(#3F3758, #3F3758) !important; }
 
 .texte-sm-right {
   background-repeat: no-repeat;
@@ -487,7 +485,7 @@ html, body {
 
 body {
   font-family: "Raleway", Verdana, sans-serif;
-  color: #ebe8da; }
+  color: #EBE8DA; }
 
 p {
   font-size: 0.8em; }
@@ -551,9 +549,9 @@ nav ul li {
   color: #292927;
   height: 200px;
   padding: 10px 20px 30px 20px;
-  background-color: #f0edde;
-  background-color: #f0edde;
-  background-image: linear-gradient(138deg, #f0edde 80%, #f0edde 80%, #ece8da 80%, #f0edde 100%);
+  background-color: #F0EDDE;
+  background-color: #F0EDDE;
+  background-image: linear-gradient(138deg, #F0EDDE 80%, #F0EDDE 80%, #ECE8DA 80%, #F0EDDE 100%);
   transform: translateY(0%);
   transition: all 0.5s;
   transition-property: height, top, padding-top; }
@@ -632,7 +630,7 @@ nav ul li {
   color: #292927;
   padding-top: 52px;
   background-color: bg-color;
-  background-image: linear-gradient(138deg, #f0edde 80%, #ece8da 80%) !important;
+  background-image: linear-gradient(138deg, #F0EDDE 80%, #ECE8DA 80%) !important;
   transform: translateY(0%);
   transition: all 0.5s;
   transition-property: height, top, padding-top;
@@ -674,7 +672,7 @@ nav ul li {
   color: #292927;
   padding-top: 52px;
   background-color: bg-color;
-  background-image: linear-gradient(138deg, #f0edde 80%, #ece8da 80%) !important;
+  background-image: linear-gradient(138deg, #F0EDDE 80%, #ECE8DA 80%) !important;
   transform: translateY(0%);
   transition: all 0.5s;
   transition-property: height, top, padding-top;
@@ -764,8 +762,8 @@ nav ul li {
       line-height: 80px; } }
 
 footer {
-  background-color: #f0edde;
-  background-image: linear-gradient(138deg, #f0edde 80%, #f0edde 80%, #ece8da 80%, #f0edde 100%);
+  background-color: #F0EDDE;
+  background-image: linear-gradient(138deg, #F0EDDE 80%, #F0EDDE 80%, #ECE8DA 80%, #F0EDDE 100%);
   padding: 2em 5em 2em 2em;
   color: #292927; }
   footer .footer-list {
@@ -1302,3 +1300,5 @@ form {
 }
 
 */
+
+/*# sourceMappingURL=main.css.map */

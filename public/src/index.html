@@ -22,7 +22,7 @@
     <%}%>
 
     <link href="//vjs.zencdn.net/4.1/video-js.css" rel="stylesheet">
-    <script type="text/javascript" src="./assets/vendor/prefix-free.js"></script>
+    <script type="text/javascript" src="./assets/vendor/prefixfree.min.js"></script>
   </head>
 <body>
         <!--[if lt IE 7]>
@@ -761,13 +761,13 @@
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="assets/vendor/jquery.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="assets/vendor/jquery.js"><\/script>')</script>
 
-<script src="./assets/vendor/greensock-js.js"></script>
+<script src="./assets/vendor/src/minified/TweenMax.min.js"></script>
 <!-- cdn fallback of greensock makes fail slide animation -->
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.3.2/spin.min.js"></script>
-<script>window.Spinner || document.write('<script src="./assets/vendor/spin.js.js"><\/script>')</script>
+<script>window.Spinner || document.write('<script src="./assets/vendor/spin.js"><\/script>')</script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 <script>window.Modernizr || document.write('<script src="./assets/vendor/modernizr.js"><\/script>')</script>
@@ -775,7 +775,7 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script>
 if(typeof($.fn.modal) === 'undefined') {
-  document.write('<script src="./assets/vendor/bootstrap.min.js"><\/script>')
+  document.write('<script src="./assets/vendor/dist/js/bootstrap.js"><\/script>')
 }
 </script>
 
@@ -789,7 +789,7 @@ if(typeof($.fn.modal) === 'undefined') {
 <script>window.videojs || document.write('<script src="./assets/vendor/video.js.js"><\/script>')</script>
 
 
-<script src="assets/vendor/ngUpload.js"></script>
+<script src="assets/vendor/ng-upload.js"></script>
 
 
 <% if (grunt.config.get('dev')) {%>

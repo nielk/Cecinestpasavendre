@@ -12,18 +12,18 @@
     "url": "https://github.com/nielk/Cecinestpasavendre/issues"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-mincss": "~0.3.2",
     "express": "~3.3.5",
-    "grunt-contrib-jshint": "~0.6.3",
-    "grunt-contrib-cssmin": "~0.6.1",
+    "grunt": "~0.4.1",
+    "grunt-bower": "^0.19.0",
     "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-copy": "~0.4.1",
-    "grunt-bower": "~0.6.1",
-    "grunt-contrib-watch": "~0.5.2",
+    "grunt-contrib-cssmin": "~0.6.1",
+    "grunt-contrib-imagemin": "~0.3.0",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-mincss": "~0.3.2",
     "grunt-contrib-sass": "~0.5.0",
-    "grunt-contrib-imagemin": "~0.3.0"
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.2"
   }
 }
