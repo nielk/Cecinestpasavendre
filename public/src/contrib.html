@@ -55,7 +55,7 @@
                 
                 <!-- Email -->
                 <div class="form-group">
-                    <label for="email">Votre email <span class="requis">*</span></label>
+                    <label for="email">Votre e-mail <span class="requis">*</span></label>
                     <div 
                          ng-show="chose_form.email.$dirty && chose_form.email.$invalid">
                         <small class="error" ng-show="chose_form.email.$error.required">
@@ -104,13 +104,12 @@
                            ng-model="chose.title"
                            ng-minlength=3
                            ng-maxlength=30 required />
-                    </div><br />
+                    </div>
                     <!-- /Title -->
                     
                     <!-- Content -->
                 <div class="form-group">
-                    <p>Parlez-nous de votre objet et dites-nous ce qu'il représente pour vous !</p>
-                    <label>La description de votre objet <span class="requis">*</span> | 300 caractères maximum</label>
+                    <label>Parlez-nous de votre objet et dites-nous ce qu'il représente pour vous ! <span class="requis">*</span> | 350 caractères maximum</label>
                     <div 
                          ng-show="chose_form.content.$dirty && chose_form.content.$invalid">
                         <small class="error" ng-show="chose_form.content.$error.required">
@@ -120,7 +119,7 @@
                             Le descriptif de votre objet doit au moins contenir 10 caractères.
                         </small>
                         <small class="error" ng-show="chose_form.content.$error.maxlength">
-                            Le descriptif de votre objet doit au plus contenir 300 caractères.
+                            Le descriptif de votre objet doit au plus contenir 350 caractères.
                         </small>
                     </div>
                     <textarea placeholder="Descriptif de votre objet"
@@ -128,7 +127,7 @@
                               class="form-control"
                               ng-model="chose.content"
                               ng-minlength=10
-                              ng-maxlength=300 
+                              ng-maxlength=350 
                               rows=6 required />
                     </textarea>
                 </div>
@@ -186,7 +185,7 @@
             <div class="col-md-offset-3 col-md-6">
               <h2>Vos objets !</h2>
               <p>
-                  Et vous ? Si vous deviez choisir un objet auquel vous tenez particulièrement, quel serait-il et que dirait-il de vous ? Contribuez au projet en postant <a href=""><em><u>votre objet</u></em></a> sur la plateforme participative du webdocumentaire ! Dis-moi ton objet, je te dirai qui tu es !
+                  Et vous ? Si vous deviez choisir un objet auquel vous tenez particulièrement, quel serait-il et que dirait-il de vous ? Contribuez au projet en postant votre objet sur la plateforme participative du webdocumentaire ! Dis-moi ton objet, je te dirai qui tu es !
               </p>
             </div>
           </div>
@@ -253,8 +252,9 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="assets/vendor/jquery.min.js"><\/script>')</script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js"></script>
+        <script src="./assets/vendor/greensock-js.js"></script>
         <script src="./assets/vendor/ngUpload.js"></script>
         <script src="./assets/js/main.js"></script>
 
