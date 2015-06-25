@@ -135,8 +135,10 @@ var insertChose = function (req, res) {
 				};
 
 				// send an email to the contributor
-				var msg = "Votre objet a bien été enregistré. Merci de votre participation ! Vous recevrez un e-mail lorsqu'il sera validé par la rédaction !";
-				var subject = "Votre objet est en cours de validation";
+				var msg = 'Bonjour,<br/>Votre objet a bien été enregistré. Merci de votre participation ! '
+						+ 'Vous recevrez un e-mail lorsqu\'il sera validé par la rédaction !<br/>A bientôt,<br />'
+						+ 'La <a href="http://vlipp.fr/nantes-nord" target="_blank">Rédaction Nantes Nord du Vlipp.fr</a>';
+				var subject = 'Votre objet est en cours de validation';
 				var to = req.body.email;
 
 				mail(msg, subject, to, function(err, status) {
@@ -147,9 +149,9 @@ var insertChose = function (req, res) {
 					}
 
 					// send an email to the moderator
-					msg = "<b>Hello, un nouvel objet a été ajouté ! cliquer ici pour le valider : " +
-					"<a href=\"http://cecinestpasavendre.vlipp.fr/valid/" + imageName + "/" + password + "\">cliquer</a></b>";
-					subject = "Nouveau contenu à valider";
+					msg = '<b>Hello, un nouvel objet a été ajouté !</b><br/>Cliquez ici pour le valider : ' +
+					'<a href="http://cecinestpasavendre.vlipp.fr/valid/' + imageName + '/' + password + '">cliquer</a><br/>bisous!';
+					subject = 'Nouveau contenu à valider';
 					to = moderator;
 
 					mail(msg, subject, to, function(err, status) {
@@ -161,10 +163,10 @@ var insertChose = function (req, res) {
 
 						if(result.uploaded && result.moderator && result.contributor) {
 						// res.send(result, 200);
-						result.sucess = 'Image uploadé !';
+						result.sucess = 'Image uploadée !';
 						res.send(result.sucess, 200);
 						} else {
-							result.fail = 'Une erreur c\'est produite, l\'image n\'a pas été uploadé';
+							result.fail = 'Une erreur s\'est produite, l\'image n\'a pas été uploadée';
 							res.send(result.fail, 500);
 						}
 					});
@@ -230,9 +232,9 @@ var validationChose = function (req,res) {
 			} else {
 			res.send('<style>body {background-color: #292927; color: white; font-family: Helvetica;} </style>'+
 					'<form method="post" action="/UpdateChose/'+imageName+'/'+pwd+'" style="text-align: center; width: 50%; margin: 0 auto;">'+
-					'<h1>Moderation</h1><br />'+
+					'<h1>Modération</h1><br />'+
 					'Auteur : <input type="text" name="author" value="'+chose.author+'"><br /><br />'+
-					'Email : <input type="text" name="email" value="'+chose.email+'"><br /><br />'+
+					'E-mail : <input type="text" name="email" value="'+chose.email+'"><br /><br />'+
 					'Titre : <input type="text" name="title" value="'+chose.title+'"><br /><br />'+
 					// '<input type="text" name="content" value="'+chose.content+'"><br />'+
 					'Descriptif : <textarea placeholder="Descriptif de votre objet" name="content" rows=6 style="width: 100%"/>'+chose.content+'</textarea><br /><br />'+
@@ -243,7 +245,7 @@ var validationChose = function (req,res) {
 		});
 
 	} else  { // pasword wrong
-		res.send('Permission refusé', 403);
+		res.send('Permission refusée', 403);
 	}
 };
 
@@ -299,10 +301,12 @@ var updateChose = function(req,res) {
 						res.send('Objet validé ! <a href="http://cecinestpasavendre.vlipp.fr">retour au site</a>', 200);
 
 						// send email to contributor to notify the new validated content
-						var msg = "Bonjour ! L'objet que vous avez posté sur <a href='http://cecinestpasavendre.vlipp.fr'>"+
-							"http://cecinestpasavendre.vlipp.fr</a> a été validé ! Vous pouvez le consulter sur "+
-							"cette page : <a href='http://cecinestpasavendre.vlipp.fr/contrib.html'>"+
-							"http://cecinestpasavendre.vlipp.fr/contrib.html</a>",
+						var msg = 'Bonjour !<br />'
+							+ 'L\'objet que vous avez posté sur <a href="http://cecinestpasavendre.vlipp.fr">'
+							+ 'http://cecinestpasavendre.vlipp.fr</a> a été validé ! Vous pouvez le consulter sur '
+							+ 'cette page : <a href="http://cecinestpasavendre.vlipp.fr/contrib.html">http://cecinestpasavendre.vlipp.fr/contrib.html</a>'
+							+ '<br/>Merci et à bientôt !<br />'
+							+ 'La <a href="http://vlipp.fr/nantes-nord" target="_blank">Rédaction Nantes Nord du Vlipp.fr</a>';
 							subject = "Votre objet a été validé",
 							to = req.body.email;
 
@@ -319,7 +323,7 @@ var updateChose = function(req,res) {
 			}
 		});
 	} else {
-		res.send('Permission refusé', 403);
+		res.send('Permission refusée', 403);
 	}
 };
 module.exports.updateChose = updateChose;

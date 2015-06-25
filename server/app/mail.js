@@ -13,8 +13,8 @@ var sendMail = function(msg, subject, to, callback) {
 	var smtpTransport = nodemailer.createTransport('SMTP',{
 		service: 'Gmail',
 		auth: {
-			user: 'cecinestpasavendre@gmail.com',
-			pass: 'Levlippcestsuper'
+			user: 'nantesnord@vlipp.fr',
+			pass: 'xx'
 		}
 	});
 
@@ -30,7 +30,7 @@ var sendMail = function(msg, subject, to, callback) {
 	} else {
 		var mailOptions = {
 			generateTextFromHTML: true,
-			from: 'cecinestpasavendre ✔ <cecinestpasavendre@vlipp.fr>', // sender address
+			from: 'cecinestpasavendre ✔ <nantesnord@vlipp.fr>', // sender address
 			to: to, // list of receivers
 			subject: subject, // Subject line
 			html: msg // html body
