@@ -3,3 +3,4 @@ node_modules
 bower_components
 .DS_Store
 public/dist/
+public/src/assets/videos/
